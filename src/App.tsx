@@ -25,7 +25,7 @@ import {
 import './App.css';
 
 const App: React.FC = () => {
-  const activeMenu = false;
+  const activeMenu = true;
   return (
     <div>
       <BrowserRouter>
