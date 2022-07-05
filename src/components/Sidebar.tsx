@@ -17,6 +17,7 @@ import { RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { BsBarChart, BsKanban } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { GiLouvrePyramid } from 'react-icons/gi';
+import { StateContextType, useStateContext } from '../contexts/ContextProvider';
 // import { links } from '../data/dummy';
 
 export const links = [
@@ -109,7 +110,7 @@ export const links = [
 ];
 
 const Sidebar: React.FC = () => {
-  const activeMenu = true;
+  const { activeMenu, setActiveMenu } = useStateContext() as StateContextType;
 
   const activeLink =
     'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2';
@@ -123,13 +124,17 @@ const Sidebar: React.FC = () => {
           <div className="flex justify-between items-center">
             <Link
               to="/"
+              onClick={() => setActiveMenu(false)}
               className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
             >
-              <SiShopware /> <span>Shoppy</span>
+              <SiShopware /> <span>Zuong</span>
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">
               <button
                 type="button"
+                onClick={() =>
+                  setActiveMenu((prevActiveMenu: boolean) => !prevActiveMenu)
+                }
                 className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
               >
                 <MdOutlineCancel />

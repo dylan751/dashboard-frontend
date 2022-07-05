@@ -22,10 +22,14 @@ import {
   ColorMapping,
   Editor,
 } from './pages';
+
+import { StateContextType, useStateContext } from './contexts/ContextProvider';
+
 import './App.css';
 
 const App: React.FC = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext() as StateContextType;
+
   return (
     <div>
       <BrowserRouter>
