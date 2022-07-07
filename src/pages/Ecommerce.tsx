@@ -7,9 +7,11 @@ import {
   SparklineAreaData,
   ecomPieChartData,
 } from '../data/dummy';
-import { useStateContext } from '../contexts/ContextProvider';
+import { StateContextType, useStateContext } from '../contexts/ContextProvider';
 
 const Ecommerce: React.FC = () => {
+  const { currentColor } = useStateContext() as StateContextType;
+
   return (
     <div className="mt-12">
       {/* --- Section --- */}
@@ -24,7 +26,7 @@ const Ecommerce: React.FC = () => {
           <div className="mt-6">
             <Button
               color="white"
-              bgColor="blue"
+              bgColor={currentColor}
               text="Download"
               borderRadius="10px"
               size="md"
@@ -100,19 +102,19 @@ const Ecommerce: React.FC = () => {
               {/* SparkLine Chart */}
               <div className="mt-5">
                 <SparkLine
-                  currentColor="blue"
+                  currentColor={currentColor}
                   id="line-sparkline"
                   type="Line"
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
-                  color="blue"
+                  color={currentColor}
                 />
               </div>
               <div className="mt-10">
                 <Button
                   color="white"
-                  bgColor="blue"
+                  bgColor={currentColor}
                   text="Download Report"
                   borderRadius="10px"
                 />
