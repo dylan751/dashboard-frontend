@@ -52,6 +52,7 @@ const Navbar: React.FC = () => {
     handleClick,
     screenSize,
     setScreenSize,
+    currentColor
   } = useStateContext() as StateContextType;
 
   // If on mobile -> Initially close the Sidebar
@@ -82,7 +83,7 @@ const Navbar: React.FC = () => {
         customFunc={() =>
           setActiveMenu((prevActiveMenu: boolean) => !prevActiveMenu)
         }
-        color="blue"
+        color={currentColor}
         icon={<AiOutlineMenu />}
       />
 
@@ -90,21 +91,21 @@ const Navbar: React.FC = () => {
         <NavButton
           title="Cart"
           customFunc={() => handleClick('cart')}
-          color="blue"
+          color={currentColor}
           icon={<FiShoppingCart />}
         />
         <NavButton
           title="Chat"
           dotColor="#03C9D7"
           customFunc={() => handleClick('chat')}
-          color="blue"
+          color={currentColor}
           icon={<BsChatLeft />}
         />
         <NavButton
           title="Notification"
           dotColor="#03C9D7"
           customFunc={() => handleClick('notification')}
-          color="blue"
+          color={currentColor}
           icon={<RiNotification3Line />}
         />
         <TooltipComponent content="Profile" position="BottomCenter">

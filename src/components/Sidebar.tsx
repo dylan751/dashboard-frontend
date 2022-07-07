@@ -110,7 +110,7 @@ export const links = [
 ];
 
 const Sidebar: React.FC = () => {
-  const { activeMenu, setActiveMenu, screenSize } =
+  const { activeMenu, setActiveMenu, screenSize, currentColor } =
     useStateContext() as StateContextType;
 
   const handleCloseSidebar = () => {
@@ -158,6 +158,9 @@ const Sidebar: React.FC = () => {
                     to={`/${link.name}`}
                     key={link.name}
                     onClick={handleCloseSidebar}
+                    style={({ isActive }) => ({
+                      backgroundColor: isActive ? currentColor : '',
+                    })}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
