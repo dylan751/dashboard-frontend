@@ -1,0 +1,8 @@
+{
+  "app": {
+    "title": "Call Center",
+    "logout": "Logout",
+    "exten": "ext",
+    "earnings": "Earnings"
+  }
+}
