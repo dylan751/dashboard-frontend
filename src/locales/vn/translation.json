@@ -1,0 +1,108 @@
+{
+  "app": {
+    "title": "Zuong Dashboard",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất"
+  },
+
+  "sideBar": {
+    "dashboard": "Dashboard",
+    "ecommerce": "Thương mại điện tử",
+    "pages": "Trang",
+    "orders": "Đơn hàng",
+    "employees": "Nhân viên",
+    "customers": "Khách hàng",
+    "apps": "Ứng dụng",
+    "calendar": "Lịch",
+    "kanban": "Bảng Kanban",
+    "editor": "Trình soạn thảo",
+    "colorPicker": "Chọn màu",
+    "charts": "Biểu đồ",
+    "line": "Đường",
+    "area": "Miền",
+    "bar": "Cột",
+    "pie": "Tròn",
+    "financial": "Tài chính",
+    "colorMapping": "Biểu đồ màu sắc",
+    "pyramid": "Kim tự tháp",
+    "stacked": "Vùng xếp chồng"
+  },
+
+  "ecommerce": {
+    "earnings": "Doanh thu",
+    "download": "Tải xuống",
+    "customers": "Khách hàng",
+    "products": "Sản phẩm",
+    "sales": "Đơn hàng",
+    "refunds": "Hoàn tiền",
+    "revenueUpdates": "Cập nhật doanh thu",
+    "expense": "Chi tiêu",
+    "budget": "Ngân quỹ",
+    "downloadReport": "Tải xuống báo cáo"
+  },
+
+  "orders": {
+    "page": "Trang",
+    "orders": "Đơn hàng",
+    "image": "Ảnh",
+    "item": "Mặt hàng",
+    "customerName": "Tên khách hàng",
+    "totalAmount": "Tổng tiền",
+    "status": "Trạng thái",
+    "orderId": "ID đơn hàng",
+    "location": "Vị trí"
+  },
+
+  "employees": {
+    "page": "Trang",
+    "employees": "Nhân viên",
+    "employee": "Nhân viên",
+    "designation": "Vị trí công việc",
+    "country": "Quốc tịch",
+    "hireDate": "Ngày thuê",
+    "reportsTo": "Báo cáo cho",
+    "employeeId": "ID nhân viên"
+  },
+
+  "customers": {
+    "page": "Trang",
+    "customers": "Khách hàng",
+    "name": "Tên",
+    "projectName": "Tên dự án",
+    "status": "Trạng thái",
+    "weeks": "Tuần",
+    "budget": "Ngân quỹ",
+    "location": "Vị trí",
+    "customerId": "ID khách hàng"
+  },
+
+  "calendar": {
+    "app": "Ứng dụng",
+    "calendar": "Lịch"
+  },
+
+  "kanban": {
+    "app": "Ứng dụng",
+    "kanban": "Bảng Kanban"
+  },
+
+  "editor": {
+    "app": "Ứng dụng",
+    "editor": "Trình soạn thảo"
+  },
+
+  "colorPicker": {
+    "app": "Ứng dụng",
+    "colorPicker": "Chọn màu"
+  },
+
+  "line": {
+    "chart": "Biểu đồ",
+    "inflationRate": "Tỷ lệ lạm phát"
+  },
+
+  "area": {
+    "chart": "Biểu đồ",
+    "inflationRateInPercentage": "Tỷ lệ lạm phát tính theo phần trăm"
+  }
+}

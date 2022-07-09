@@ -12,10 +12,70 @@ import {
   Filter,
 } from '@syncfusion/ej2-react-grids';
 
-import { customersData, customersGrid } from '../data/dummy';
+import {
+  customersData,
+  customerGridImage,
+  customerGridStatus,
+} from '../data/dummy';
 import { Header } from '../components';
+import { useTranslation } from 'react-i18next';
 
 const Customers: React.FC = () => {
+  const { t } = useTranslation();
+
+  const customersGrid = [
+    { type: 'checkbox', width: '50' },
+    {
+      headerText: t('customers.name'),
+      width: '150',
+      template: customerGridImage,
+      textAlign: 'Center',
+    },
+    {
+      field: 'ProjectName',
+      headerText: t('customers.projectName'),
+      width: '150',
+      textAlign: 'Center',
+    },
+    {
+      field: 'Status',
+      headerText: t('customers.status'),
+      width: '130',
+      format: 'yMd',
+      textAlign: 'Center',
+      template: customerGridStatus,
+    },
+    {
+      field: 'Weeks',
+      headerText: t('customers.weeks'),
+      width: '100',
+      format: 'C2',
+      textAlign: 'Center',
+    },
+    {
+      field: 'Budget',
+      headerText: t('customers.budget'),
+      width: '100',
+      format: 'yMd',
+      textAlign: 'Center',
+    },
+
+    {
+      field: 'Location',
+      headerText: t('customers.location'),
+      width: '150',
+      textAlign: 'Center',
+    },
+
+    {
+      field: 'CustomerID',
+      headerText: t('customers.customerId'),
+      width: '120',
+      textAlign: 'Center',
+      isPrimaryKey: true,
+    },
+  ];
+
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
       <Header category="Page" title="Customers" />

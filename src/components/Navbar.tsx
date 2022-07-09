@@ -5,10 +5,17 @@ import { BsChatLeft } from 'react-icons/bs';
 import { RiNotification3Line } from 'react-icons/ri';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
 
 import avatar from '../public/images/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '.';
 import { StateContextType, useStateContext } from '../contexts/ContextProvider';
+
+import { useTranslation } from 'react-i18next';
+import languageMap, {
+  languageItems,
+  LanguageMapType,
+} from '../locales/languageMap';
 
 interface NavButtonInterface {
   title?: string;
@@ -44,6 +51,7 @@ const NavButton = ({
 };
 
 const Navbar: React.FC = () => {
+  const { i18n } = useTranslation();
   const {
     activeMenu,
     setActiveMenu,
@@ -52,7 +60,7 @@ const Navbar: React.FC = () => {
     handleClick,
     screenSize,
     setScreenSize,
-    currentColor
+    currentColor,
   } = useStateContext() as StateContextType;
 
   // If on mobile -> Initially close the Sidebar
@@ -88,6 +96,14 @@ const Navbar: React.FC = () => {
       />
 
       <div className="flex">
+        {/* Select languages */}
+        <DropDownButtonComponent
+          items={languageItems}
+          select={(value) => i18n.changeLanguage(value.item.properties.id)}
+        >
+          {languageMap[i18n.resolvedLanguage as keyof LanguageMapType]}
+        </DropDownButtonComponent>
+
         <NavButton
           title="Cart"
           customFunc={() => handleClick('cart')}

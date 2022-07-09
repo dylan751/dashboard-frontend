@@ -18,98 +18,116 @@ import { BsBarChart, BsKanban } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { GiLouvrePyramid } from 'react-icons/gi';
 import { StateContextType, useStateContext } from '../contexts/ContextProvider';
+import { useTranslation } from 'react-i18next';
 // import { links } from '../data/dummy';
 
-export const links = [
-  {
-    title: 'Dashboard',
-    links: [
-      {
-        name: 'ecommerce',
-        icon: <FiShoppingBag />,
-      },
-    ],
-  },
-
-  {
-    title: 'Pages',
-    links: [
-      {
-        name: 'orders',
-        icon: <AiOutlineShoppingCart />,
-      },
-      {
-        name: 'employees',
-        icon: <IoMdContacts />,
-      },
-      {
-        name: 'customers',
-        icon: <RiContactsLine />,
-      },
-    ],
-  },
-  {
-    title: 'Apps',
-    links: [
-      {
-        name: 'calendar',
-        icon: <AiOutlineCalendar />,
-      },
-      {
-        name: 'kanban',
-        icon: <BsKanban />,
-      },
-      {
-        name: 'editor',
-        icon: <FiEdit />,
-      },
-      {
-        name: 'color-picker',
-        icon: <BiColorFill />,
-      },
-    ],
-  },
-  {
-    title: 'Charts',
-    links: [
-      {
-        name: 'line',
-        icon: <AiOutlineStock />,
-      },
-      {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
-
-      {
-        name: 'bar',
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: 'pie',
-        icon: <FiPieChart />,
-      },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
-      },
-    ],
-  },
-];
-
 const Sidebar: React.FC = () => {
+  const { t } = useTranslation();
+  const links = [
+    {
+      title: `${t('sideBar.dashboard')}`,
+      links: [
+        {
+          name: `${t('sideBar.ecommerce')}`,
+          url: 'Ecommerce',
+          icon: <FiShoppingBag />,
+        },
+      ],
+    },
+
+    {
+      title: `${t('sideBar.pages')}`,
+      links: [
+        {
+          name: `${t('sideBar.orders')}`,
+          url: 'Orders',
+          icon: <AiOutlineShoppingCart />,
+        },
+        {
+          name: `${t('sideBar.employees')}`,
+          url: 'Employees',
+          icon: <IoMdContacts />,
+        },
+        {
+          name: `${t('sideBar.customers')}`,
+          url: 'Customers',
+          icon: <RiContactsLine />,
+        },
+      ],
+    },
+    {
+      title: `${t('sideBar.apps')}`,
+      links: [
+        {
+          name: `${t('sideBar.calendar')}`,
+          url: 'Calendar',
+          icon: <AiOutlineCalendar />,
+        },
+        {
+          name: `${t('sideBar.kanban')}`,
+          url: 'Kanban',
+          icon: <BsKanban />,
+        },
+        {
+          name: `${t('sideBar.editor')}`,
+          url: 'Editor',
+          icon: <FiEdit />,
+        },
+        {
+          name: `${t('sideBar.colorPicker')}`,
+          url: 'Color-Picker',
+          icon: <BiColorFill />,
+        },
+      ],
+    },
+    {
+      title: `${t('sideBar.charts')}`,
+      links: [
+        {
+          name: `${t('sideBar.line')}`,
+          url: 'Line',
+          icon: <AiOutlineStock />,
+        },
+        {
+          name: `${t('sideBar.area')}`,
+          url: 'Area',
+          icon: <AiOutlineAreaChart />,
+        },
+
+        {
+          name: `${t('sideBar.bar')}`,
+          url: 'Bar',
+          icon: <AiOutlineBarChart />,
+        },
+        {
+          name: `${t('sideBar.pie')}`,
+          url: 'Pie',
+          icon: <FiPieChart />,
+        },
+        {
+          name: `${t('sideBar.financial')}`,
+          url: 'Financial',
+          icon: <RiStockLine />,
+        },
+        {
+          name: `${t('sideBar.colorMapping')}`,
+          url: 'Color-Mapping',
+          icon: <BsBarChart />,
+        },
+        {
+          name: `${t('sideBar.pyramid')}`,
+          url: 'Pyramid',
+          icon: <GiLouvrePyramid />,
+        },
+        {
+          name: `${t('sideBar.stacked')}`,
+          url: 'Stacked',
+          icon: <AiOutlineBarChart />,
+        },
+      ],
+    },
+  ];
+
   const { activeMenu, setActiveMenu, screenSize, currentColor } =
     useStateContext() as StateContextType;
 
@@ -155,7 +173,7 @@ const Sidebar: React.FC = () => {
                 <p className="text-gray-400 m-3 mt-4 uppercase">{item.title}</p>
                 {item.links.map((link) => (
                   <NavLink
-                    to={`/${link.name}`}
+                    to={`/${link.url}`}
                     key={link.name}
                     onClick={handleCloseSidebar}
                     style={({ isActive }) => ({

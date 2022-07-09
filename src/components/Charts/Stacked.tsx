@@ -10,6 +10,7 @@ import {
   Tooltip,
   AxisModel,
 } from '@syncfusion/ej2-react-charts';
+import { useTranslation } from 'react-i18next';
 
 import {
   stackedCustomSeries,
@@ -23,6 +24,49 @@ interface StackedProps {
 }
 
 const Stacked = ({ width, height }: StackedProps) => {
+  const { t } = useTranslation();
+
+  const stackedChartData = [
+    [
+      { x: 'Jan', y: 111.1 },
+      { x: 'Feb', y: 127.3 },
+      { x: 'Mar', y: 143.4 },
+      { x: 'Apr', y: 159.9 },
+      { x: 'May', y: 159.9 },
+      { x: 'Jun', y: 159.9 },
+      { x: 'July', y: 159.9 },
+    ],
+    [
+      { x: 'Jan', y: 111.1 },
+      { x: 'Feb', y: 127.3 },
+      { x: 'Mar', y: 143.4 },
+      { x: 'Apr', y: 159.9 },
+      { x: 'May', y: 159.9 },
+      { x: 'Jun', y: 159.9 },
+      { x: 'July', y: 159.9 },
+    ],
+  ];
+
+  const stackedCustomSeries = [
+    {
+      dataSource: stackedChartData[0],
+      xName: 'x',
+      yName: 'y',
+      name: t('ecommerce.budget'),
+      type: 'StackingColumn',
+      background: 'blue',
+    },
+
+    {
+      dataSource: stackedChartData[1],
+      xName: 'x',
+      yName: 'y',
+      name: t('ecommerce.expense'),
+      type: 'StackingColumn',
+      background: 'red',
+    },
+  ];
+
   return (
     <ChartComponent
       width={width}

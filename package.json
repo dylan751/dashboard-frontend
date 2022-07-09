@@ -10,9 +10,11 @@
     "@syncfusion/ej2-react-grids": "^19.4.50",
     "@syncfusion/ej2-react-inputs": "^19.4.52",
     "@syncfusion/ej2-react-kanban": "^19.4.48",
+    "@syncfusion/ej2-react-navigations": "^20.2.36",
     "@syncfusion/ej2-react-popups": "^19.4.52",
     "@syncfusion/ej2-react-richtexteditor": "^19.4.50",
     "@syncfusion/ej2-react-schedule": "^19.4.50",
+    "@syncfusion/ej2-react-splitbuttons": "^20.2.36",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -20,8 +22,13 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/webpack-env": "^1.17.0",
+    "i18next": "^21.8.13",
+    "i18next-browser-languagedetector": "^6.1.4",
+    "i18next-scanner": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^11.18.0",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.1",
@@ -32,7 +39,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "yarn run eslint src",
+    "lint:fix": "yarn run eslint --fix src"
   },
   "eslintConfig": {
     "extends": [
