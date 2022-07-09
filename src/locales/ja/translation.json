@@ -51,5 +51,58 @@
     "status": "状態",
     "orderId": "注文ID",
     "location": "場所"
+  },
+
+  "employees": {
+    "page": "ページ",
+    "employees": "会社員",
+    "employee": "会社員",
+    "designation": "指定",
+    "country": "国籍",
+    "hireDate": "採用日",
+    "reportsTo": "報告する",
+    "employeeId": "会社員ID"
+  },
+
+  "customers": {
+    "page": "ページ",
+    "customers": "お客様",
+    "name": "名前",
+    "projectName": "プロジェクト名",
+    "status": "状態",
+    "weeks": "週",
+    "budget": "予算",
+    "location": "場所",
+    "customerId": "お客様ID"
+  },
+
+  "calendar": {
+    "app": "アプリ",
+    "calendar": "カレンダー"
+  },
+
+  "kanban": {
+    "app": "アプリ",
+    "kanban": "カンバン"
+  },
+
+  "editor": {
+    "app": "アプリ",
+    "editor": "エディター"
+  },
+
+  "colorPicker": {
+    "app": "アプリ",
+    "colorPicker": "カラーピッカー"
+  },
+
+  "line": {
+    "chart": "表",
+    "inflationRate": "インフレ率"
+  },
+
+  "area": {
+    "chart": "表",
+    "inflationRateInPercentage": "パーセンテージで表したインフレ率"
   }
 }

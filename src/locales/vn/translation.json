@@ -51,5 +51,58 @@
     "status": "Trạng thái",
     "orderId": "ID đơn hàng",
     "location": "Vị trí"
+  },
+
+  "employees": {
+    "page": "Trang",
+    "employees": "Nhân viên",
+    "employee": "Nhân viên",
+    "designation": "Vị trí công việc",
+    "country": "Quốc tịch",
+    "hireDate": "Ngày thuê",
+    "reportsTo": "Báo cáo cho",
+    "employeeId": "ID nhân viên"
+  },
+
+  "customers": {
+    "page": "Trang",
+    "customers": "Khách hàng",
+    "name": "Tên",
+    "projectName": "Tên dự án",
+    "status": "Trạng thái",
+    "weeks": "Tuần",
+    "budget": "Ngân quỹ",
+    "location": "Vị trí",
+    "customerId": "ID khách hàng"
+  },
+
+  "calendar": {
+    "app": "Ứng dụng",
+    "calendar": "Lịch"
+  },
+
+  "kanban": {
+    "app": "Ứng dụng",
+    "kanban": "Bảng Kanban"
+  },
+
+  "editor": {
+    "app": "Ứng dụng",
+    "editor": "Trình soạn thảo"
+  },
+
+  "colorPicker": {
+    "app": "Ứng dụng",
+    "colorPicker": "Chọn màu"
+  },
+
+  "line": {
+    "chart": "Biểu đồ",
+    "inflationRate": "Tỷ lệ lạm phát"
+  },
+
+  "area": {
+    "chart": "Biểu đồ",
+    "inflationRateInPercentage": "Tỷ lệ lạm phát tính theo phần trăm"
   }
 }

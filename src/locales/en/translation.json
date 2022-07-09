@@ -51,5 +51,58 @@
     "status": "Status",
     "orderId": "Order ID",
     "location": "Location"
+  },
+
+  "employees": {
+    "page": "Page",
+    "employees": "Employees",
+    "employee": "Employee",
+    "designation": "Designation",
+    "country": "Country",
+    "hireDate": "Hire Date",
+    "reportsTo": "Reports To",
+    "employeeId": "Employee ID"
+  },
+
+  "customers": {
+    "page": "Page",
+    "customers": "Customers",
+    "name": "Name",
+    "projectName": "Project Name",
+    "status": "Status",
+    "weeks": "Weeks",
+    "budget": "Budget",
+    "location": "Location",
+    "customerId": "Customer ID"
+  },
+
+  "calendar": {
+    "app": "App",
+    "calendar": "Calendar"
+  },
+
+  "kanban": {
+    "app": "App",
+    "kanban": "Kanban"
+  },
+
+  "editor": {
+    "app": "App",
+    "editor": "Editor"
+  },
+
+  "colorPicker": {
+    "app": "App",
+    "colorPicker": "Color-Picker"
+  },
+
+  "line": {
+    "chart": "Chart",
+    "inflationRate": "Inflation Rate"
+  },
+
+  "area": {
+    "chart": "Chart",
+    "inflationRateInPercentage": "Inflation Rate in Percentage"
   }
 }
