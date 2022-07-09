@@ -14,10 +14,67 @@ import {
   Inject,
 } from '@syncfusion/ej2-react-grids';
 
-import { ordersData, ordersGrid } from '../data/dummy';
+import {
+  gridOrderImage,
+  gridOrderStatus,
+  ordersData,
+} from '../data/dummy';
 import { Header } from '../components';
+import { useTranslation } from 'react-i18next';
 
 const Orders: React.FC = () => {
+  const { t } = useTranslation();
+
+  const ordersGrid = [
+    {
+      headerText: t('orders.image'),
+      template: gridOrderImage,
+      textAlign: 'Center',
+      width: '120',
+    },
+    {
+      field: 'OrderItems',
+      headerText: t('orders.item'),
+      width: '150',
+      editType: 'dropdownedit',
+      textAlign: 'Center',
+    },
+    {
+      field: 'CustomerName',
+      headerText: t('orders.customerName'),
+      width: '150',
+      textAlign: 'Center',
+    },
+    {
+      field: 'TotalAmount',
+      headerText: t('orders.totalAmount'),
+      format: 'C2',
+      textAlign: 'Center',
+      editType: 'numericedit',
+      width: '150',
+    },
+    {
+      headerText: t('orders.status'),
+      template: gridOrderStatus,
+      field: 'OrderItems',
+      textAlign: 'Center',
+      width: '120',
+    },
+    {
+      field: 'OrderID',
+      headerText: t('orders.orderId'),
+      width: '120',
+      textAlign: 'Center',
+    },
+
+    {
+      field: 'Location',
+      headerText: t('orders.location'),
+      width: '150',
+      textAlign: 'Center',
+    },
+  ];
+
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
       <Header category="Page" title="Orders" />

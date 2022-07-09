@@ -1,18 +1,60 @@
 import React from 'react';
-import { BsCurrencyDollar } from 'react-icons/bs';
+import { BsBoxSeam, BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { Stacked, Pie, Button, SparkLine } from '../components';
 import {
-  earningData,
   SparklineAreaData,
   ecomPieChartData,
 } from '../data/dummy';
 import { StateContextType, useStateContext } from '../contexts/ContextProvider';
 import { useTranslation } from 'react-i18next';
+import { MdOutlineSupervisorAccount } from 'react-icons/md';
+import { FiBarChart } from 'react-icons/fi';
+import { HiOutlineRefresh } from 'react-icons/hi';
 
 const Ecommerce: React.FC = () => {
   const { t } = useTranslation();
   const { currentColor } = useStateContext() as StateContextType;
+
+  const earningData = [
+    {
+      icon: <MdOutlineSupervisorAccount />,
+      amount: '39,354',
+      percentage: '-4%',
+      title: t('ecommerce.customers'),
+      iconColor: '#03C9D7',
+      iconBg: '#E5FAFB',
+      pcColor: 'red-600',
+    },
+    {
+      icon: <BsBoxSeam />,
+      amount: '4,396',
+      percentage: '+23%',
+      title: t('ecommerce.products'),
+      iconColor: 'rgb(255, 244, 229)',
+      iconBg: 'rgb(254, 201, 15)',
+      pcColor: 'green-600',
+    },
+    {
+      icon: <FiBarChart />,
+      amount: '423,39',
+      percentage: '+38%',
+      title: t('ecommerce.sales'),
+      iconColor: 'rgb(228, 106, 118)',
+      iconBg: 'rgb(255, 244, 229)',
+
+      pcColor: 'green-600',
+    },
+    {
+      icon: <HiOutlineRefresh />,
+      amount: '39,354',
+      percentage: '-12%',
+      title: t('ecommerce.refunds'),
+      iconColor: 'rgb(0, 194, 146)',
+      iconBg: 'rgb(235, 250, 242)',
+      pcColor: 'red-600',
+    },
+  ];
 
   return (
     <div className="mt-12">
@@ -21,7 +63,9 @@ const Ecommerce: React.FC = () => {
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-400">{t('app.earnings')}</p>
+              <p className="font-bold text-gray-400">
+                {t('ecommerce.earnings')}
+              </p>
               <p className="text-2xl">$63,448.78</p>
             </div>
           </div>
@@ -29,7 +73,7 @@ const Ecommerce: React.FC = () => {
             <Button
               color="white"
               bgColor={currentColor}
-              text="Download"
+              text={t('ecommerce.download')}
               borderRadius="10px"
               size="md"
             />
@@ -66,19 +110,21 @@ const Ecommerce: React.FC = () => {
       <div className="flex gap-10 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
           <div className="flex justify-between">
-            <p className="font-semibold font-xl">Revenue Updates</p>
+            <p className="font-semibold font-xl">
+              {t('ecommerce.revenueUpdates')}
+            </p>
             <div className="flex items-center gap-4">
               <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
                 <span>
                   <GoPrimitiveDot />
                 </span>
-                <span>Expense</span>
+                <span>{t('ecommerce.expense')}</span>
               </p>
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
                 <span>
                   <GoPrimitiveDot />
                 </span>
-                <span>Budget</span>
+                <span>{t('ecommerce.budget')}</span>
               </p>
             </div>
           </div>
@@ -92,13 +138,13 @@ const Ecommerce: React.FC = () => {
                     23%
                   </span>
                 </p>
-                <p className="text-gray-500 mt-1">Budget</p>
+                <p className="text-gray-500 mt-1">{t('ecommerce.budget')}</p>
               </div>
               <div className="mt-8">
                 <p>
                   <span className="text-3xl font-semibold">$48,438</span>
                 </p>
-                <p className="text-gray-500 mt-1">Expense</p>
+                <p className="text-gray-500 mt-1">{t('ecommerce.expense')}</p>
               </div>
 
               {/* SparkLine Chart */}
@@ -117,7 +163,7 @@ const Ecommerce: React.FC = () => {
                 <Button
                   color="white"
                   bgColor={currentColor}
-                  text="Download Report"
+                  text={t('ecommerce.downloadReport')}
                   borderRadius="10px"
                 />
               </div>

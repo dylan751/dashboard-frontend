@@ -1,8 +1,55 @@
 {
   "app": {
-    "title": "コールセンター",
-    "logout": "ログアウト",
-    "exten": "外線発信番号",
-    "earnings": "ログアウト"
+    "title": "Zuong ダッシュボード",
+    "login": "ログイン",
+    "logout": "ログアウト"
+  },
+
+  "sideBar": {
+    "dashboard": "ダッシュボード",
+    "ecommerce": "Eコマース",
+    "pages": "ページ",
+    "orders": "注文",
+    "employees": "会社員",
+    "customers": "お客様",
+    "apps": "アプリ",
+    "calendar": "カレンダー",
+    "kanban": "カンバン",
+    "editor": "エディター",
+    "colorPicker": "カラーピッカー",
+    "charts": "表",
+    "line": "折れ線グラフ",
+    "area": "面グラフ",
+    "bar": "棒グラフ",
+    "pie": "円グラフ",
+    "financial": "金融",
+    "colorMapping": "カラーマッピング",
+    "pyramid": "ピラミッドグラフ",
+    "stacked": "積み上げグラフ"
+  },
+
+  "ecommerce": {
+    "earnings": "収益",
+    "download": "ダウンロード",
+    "customers": "お客様",
+    "products": "製品",
+    "sales": "売り上げ",
+    "refunds": "払い戻し",
+    "revenueUpdates": "収益",
+    "expense": "費用",
+    "budget": "予算",
+    "downloadReport": "レポートをダウンロード"
+  },
+
+  "orders": {
+    "page": "ページ",
+    "orders": "注文",
+    "image": "画像",
+    "item": "アイテム",
+    "customerName": "顧客名",
+    "totalAmount": "合計金額",
+    "status": "状態",
+    "orderId": "注文ID",
+    "location": "場所"
   }
 }
