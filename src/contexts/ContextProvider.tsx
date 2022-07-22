@@ -13,10 +13,12 @@ export type StateContextType = {
   handleClick: (clicked: string) => void;
   screenSize: number | undefined;
   setScreenSize: any;
+  currentUser: UserInfo | undefined;
   currentColor: string;
   currentMode: string;
   themeSettings: boolean;
   setThemeSettings: any;
+  setUser: (data: UserInfo | undefined) => void;
   setColor: (color: string) => void;
   setMode: (mode: BaseSyntheticEvent) => void;
 };
@@ -26,6 +28,15 @@ interface NavbarInterface {
   cart: boolean;
   userProfile: boolean;
   notification: boolean;
+}
+
+interface UserInfo {
+  id: number;
+  accessToken: string;
+  username?: string;
+  email?: string;
+  name?: string;
+  role?: string;
 }
 
 export const StateContext = createContext<StateContextType | null>(null);
@@ -38,12 +49,23 @@ const initialState: NavbarInterface = {
 };
 
 export const ContextProvider = ({ children }: ContextProviderProps) => {
+  const [currentUser, setCurrentUser] = useState<UserInfo | undefined>();
   const [activeMenu, setActiveMenu] = useState(true);
   const [isClicked, setIsClicked] = useState(initialState);
   const [screenSize, setScreenSize] = useState(undefined); // To auto closing Sidebar if on Mobile
   const [currentColor, setCurrentColor] = useState('#03C9D7');
   const [currentMode, setCurrentMode] = useState('Light');
   const [themeSettings, setThemeSettings] = useState(false); // Is the Theme Settings Sidebar currently opened or closed
+
+  const setUser = (data: UserInfo | undefined) => {
+    console.log(data);
+    setCurrentUser(data);
+    if (data && data.accessToken) {
+      localStorage.setItem('accessToken', data.accessToken); // Save the progress -> After the user login again, the user login remains
+    }
+
+    console.log(currentUser);
+  };
 
   const setMode = (e: BaseSyntheticEvent) => {
     setCurrentMode(e.target.value);
@@ -75,10 +97,12 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
         handleClick,
         screenSize,
         setScreenSize,
+        currentUser,
         currentColor,
         currentMode,
         themeSettings,
         setThemeSettings,
+        setUser,
         setColor,
         setMode,
       }}

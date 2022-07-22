@@ -7,6 +7,9 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
 
+import { GoogleLogin, googleLogout } from '@react-oauth/google';
+import { useNavigate } from 'react-router-dom';
+
 import avatar from '../public/images/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '.';
 import { StateContextType, useStateContext } from '../contexts/ContextProvider';
@@ -16,6 +19,7 @@ import languageMap, {
   languageItems,
   LanguageMapType,
 } from '../locales/languageMap';
+import { createOrGetUser } from '../utils';
 
 interface NavButtonInterface {
   title?: string;
@@ -62,6 +66,8 @@ const Navbar: React.FC = () => {
     setScreenSize,
     currentColor,
   } = useStateContext() as StateContextType;
+  const navigate = useNavigate();
+  const { currentUser, setUser } = useStateContext() as StateContextType;
 
   // If on mobile -> Initially close the Sidebar
   useEffect(() => {
@@ -124,21 +130,40 @@ const Navbar: React.FC = () => {
           color={currentColor}
           icon={<RiNotification3Line />}
         />
-        <TooltipComponent content="Profile" position="BottomCenter">
-          <div
-            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-            onClick={() => handleClick('userProfile')}
-          >
-            <img className="rounded-full w-8 h-8" src={avatar} />
-            <p>
-              <span className="text-gray-400 text-14">Hi, </span>{' '}
-              <span className="text-gray-400 font-bold ml-1 text-14">
-                Zuong
-              </span>
-            </p>
-            <MdKeyboardArrowDown className="text-gray-400 text-14" />
-          </div>
-        </TooltipComponent>
+        {!currentUser ? (
+          <TooltipComponent content="Profile" position="BottomCenter">
+            <div
+              className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg ml-4"
+              // onClick={() => handleClick('userProfile')}
+              onClick={() => navigate('/user-profile')}
+            >
+              <img className="rounded-full w-8 h-8" src={avatar} />
+              <p>
+                <span className="text-gray-400 text-14">Hi, </span>{' '}
+                <span className="text-gray-400 font-bold ml-1 text-14">
+                  Zuong
+                </span>
+              </p>
+              <MdKeyboardArrowDown className="text-gray-400 text-14" />
+            </div>
+          </TooltipComponent>
+        ) : (
+          <button onClick={() => setUser(undefined)} className="border-none rounded bg-blue-500 py-0 px-4 text-white ml-4">Log out</button>
+        )}
+
+        {/* Login Button */}
+
+        {/* Google Login Button */}
+        {/* <div>
+          {user ? (
+            <div>Logged In</div>
+          ) : (
+            <GoogleLogin
+              onSuccess={(response) => createOrGetUser(response)}
+              onError={() => console.log('Error')}
+            />
+          )}
+        </div> */}
 
         {isClicked.cart && <Cart />}
         {isClicked.chat && <Chat />}

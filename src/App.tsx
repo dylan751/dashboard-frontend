@@ -3,7 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import { Navbar, Sidebar, ThemeSettings } from './components';
+import {
+  Navbar,
+  Sidebar,
+  ThemeSettings,
+  UserProfile,
+  LogInForm,
+  SignUpForm,
+} from './components';
 import {
   Ecommerce,
   Orders,
@@ -26,10 +33,16 @@ import {
 import { StateContextType, useStateContext } from './contexts/ContextProvider';
 
 import './App.css';
+import RequireAuth from './components/Auth/RequireAuth';
 
 const App: React.FC = () => {
-  const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } =
-    useStateContext() as StateContextType;
+  const {
+    activeMenu,
+    themeSettings,
+    setThemeSettings,
+    currentColor,
+    currentMode,
+  } = useStateContext() as StateContextType;
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
@@ -72,6 +85,11 @@ const App: React.FC = () => {
               {themeSettings && <ThemeSettings />}
 
               <Routes>
+                {/* User */}
+                <Route path="/login" element={<LogInForm />} />
+                <Route path="/signup" element={<SignUpForm />} />
+                <Route path="/user-profile" element={<UserProfile />} />
+
                 {/* Dashboard */}
                 <Route path="/" element={<Ecommerce />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />

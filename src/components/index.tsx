@@ -13,3 +13,5 @@ export { default as Stacked } from './Charts/Stacked';
 export { default as Pie } from './Charts/Pie';
 export { default as ChartsHeader } from './ChartsHeader';
 export { default as Header } from './Header';
+export { default as LogInForm } from './Auth/LogInForm';
+export { default as SignUpForm } from './Auth/SignUpForm';
