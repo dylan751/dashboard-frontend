@@ -7,7 +7,6 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
 
-import { GoogleLogin, googleLogout } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 
 import avatar from '../public/images/avatar.jpg';
@@ -19,7 +18,6 @@ import languageMap, {
   languageItems,
   LanguageMapType,
 } from '../locales/languageMap';
-import { createOrGetUser } from '../utils';
 
 interface NavButtonInterface {
   title?: string;
@@ -57,10 +55,8 @@ const NavButton = ({
 const Navbar: React.FC = () => {
   const { i18n } = useTranslation();
   const {
-    activeMenu,
     setActiveMenu,
     isClicked,
-    setIsClicked,
     handleClick,
     screenSize,
     setScreenSize,
@@ -148,10 +144,24 @@ const Navbar: React.FC = () => {
             </div>
           </TooltipComponent>
         ) : (
-          <button onClick={() => setUser(undefined)} className="border-none rounded bg-blue-500 py-0 px-4 text-white ml-4">Log out</button>
+          <button
+            onClick={() => setUser(undefined)}
+            className="border-none rounded bg-blue-500 py-0 px-4 text-white ml-4"
+          >
+            Log out
+          </button>
         )}
 
         {/* Login Button */}
+        {!currentUser && (
+          <button
+            onClick={() => {
+              navigate('/login');
+            }}
+          >
+            Login
+          </button>
+        )}
 
         {/* Google Login Button */}
         {/* <div>

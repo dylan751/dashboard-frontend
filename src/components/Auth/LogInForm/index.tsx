@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import AuthApi from '../../../services/AuthApi';
 
 import {
@@ -26,6 +26,7 @@ const LogInForm = () => {
       password: enteredPassword,
     });
 
+    localStorage.setItem('accessToken', response.data.data.access_token);
     const { id, username, name, email, role } = response.data.data.user;
     setUser({
       id,
@@ -37,8 +38,15 @@ const LogInForm = () => {
     });
   }
 
+  // set current user then redirect to home page
+  useEffect(() => {
+    if (currentUser) {
+      navigate('/');
+    }
+  }, [currentUser, navigate]);
+
   return (
-    <div className="mx-auto w-1/4 pt-20">
+    <div className="mx-auto w-1/4 pt-20 mt-20">
       {!currentUser ? (
         <form
           onSubmit={submitHandler}
