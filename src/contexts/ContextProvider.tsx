@@ -55,13 +55,11 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
   const [themeSettings, setThemeSettings] = useState(false); // Is the Theme Settings Sidebar currently opened or closed
 
   const setUser = (data: UserInfo | undefined) => {
-    console.log(data);
     setCurrentUser(data);
     if (data && data.accessToken) {
       localStorage.setItem('accessToken', data.accessToken); // Save the progress -> After the user login again, the user login remains
     }
 
-    console.log(currentUser);
   };
 
   const setMode = (e: BaseSyntheticEvent) => {
