@@ -146,7 +146,8 @@ const Navbar: React.FC = () => {
         ) : (
           <button
             onClick={() => setUser(undefined)}
-            className="border-none rounded bg-blue-500 py-0 px-4 text-white ml-4"
+            className="border-none rounded py-0 px-4 text-white ml-4"
+            style={{ background: currentColor }}
           >
             Log out
           </button>

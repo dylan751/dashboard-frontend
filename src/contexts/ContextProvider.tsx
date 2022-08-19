@@ -31,12 +31,9 @@ interface NavbarInterface {
 }
 
 interface UserInfo {
-  id: number;
+  userId: number;
   accessToken: string;
-  username?: string;
-  email?: string;
-  name?: string;
-  role?: string;
+  email: string;
 }
 
 export const StateContext = createContext<StateContextType | null>(null);

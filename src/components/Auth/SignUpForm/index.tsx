@@ -7,9 +7,9 @@ export const server = dev
   ? process.env.NEXT_PUBLIC_APP_ENDPOINT_LOCAL
   : process.env.NEXT_PUBLIC_APP_ENDPOINT;
 
-async function createUser(username: string, password: string) {
+async function createUser(email: string, password: string) {
   const response = await AuthApi.signup({
-    username,
+    email,
     password,
   });
 
@@ -20,18 +20,18 @@ async function createUser(username: string, password: string) {
 
 const SignUpForm = () => {
   const navigate = useNavigate();
-  const usernameInputRef = useRef<any>(null);
+  const emailInputRef = useRef<any>(null);
   const passwordInputRef = useRef<any>(null);
 
   async function submitHandler(event: any) {
     event.preventDefault();
 
-    const enteredUsername = usernameInputRef?.current?.value;
+    const enteredEmail = emailInputRef?.current?.value;
     const enteredPassword = passwordInputRef?.current?.value;
 
     // optional: Add validation
     try {
-      await createUser(enteredUsername, enteredPassword);
+      await createUser(enteredEmail, enteredPassword);
     } catch (error) {
       console.log(error);
     }
@@ -44,14 +44,14 @@ const SignUpForm = () => {
         className="flex flex-col gap-2 justify-center px-8 py-12 border shadow-lg shadow-blue-200 bg-white items-center m-0"
       >
         <div className="w-full">
-          <label htmlFor="username"></label>
+          <label htmlFor="email"></label>
           <input
             className="w-full mb-4 bg-white rounded border border-slate-200 p-2"
-            placeholder="Username"
-            type="text"
-            id="username"
+            placeholder="Email"
+            type="email"
+            id="email"
             required
-            ref={usernameInputRef}
+            ref={emailInputRef}
           />
         </div>
         <div className="w-full">

@@ -11,30 +11,27 @@ import { useNavigate } from 'react-router-dom';
 const LogInForm = () => {
   const navigate = useNavigate();
   const { currentUser, setUser } = useStateContext() as StateContextType;
-  const usernameInputRef = useRef<any>(null);
+  const emailInputRef = useRef<any>(null);
   const passwordInputRef = useRef<any>(null);
 
   async function submitHandler(event: any) {
     event.preventDefault();
 
-    const enteredUsername = usernameInputRef?.current?.value;
+    const enteredEmail = emailInputRef?.current?.value;
     const enteredPassword = passwordInputRef?.current?.value;
 
     // TODO: Add validation
     const response = await AuthApi.login({
-      username: enteredUsername,
+      username: enteredEmail,
       password: enteredPassword,
     });
 
     localStorage.setItem('accessToken', response.data.data.access_token);
-    const { id, username, name, email, role } = response.data.data.user;
+    const { userId, email } = response.data.data.user;
     setUser({
-      id,
-      username,
-      accessToken: response.data.data.access_token,
-      name,
+      userId,
       email,
-      role,
+      accessToken: response.data.data.access_token,
     });
   }
 
@@ -46,21 +43,21 @@ const LogInForm = () => {
   }, [currentUser, navigate]);
 
   return (
-    <div className="mx-auto w-1/4 pt-20 mt-20">
+    <div className="mx-auto w-1/4 pt-20 mt-24">
       {!currentUser ? (
         <form
           onSubmit={submitHandler}
           className="flex flex-col gap-2 justify-center px-8 py-12 border shadow-lg shadow-blue-200 bg-white items-center m-0"
         >
           <div className="w-full">
-            <label htmlFor="username"></label>
+            <label htmlFor="email"></label>
             <input
               className="w-full mb-4 bg-white rounded border border-slate-200 p-2"
-              placeholder="Username"
-              type="text"
-              id="username"
+              placeholder="Email"
+              type="email"
+              id="email"
               required
-              ref={usernameInputRef}
+              ref={emailInputRef}
             />
           </div>
           <div className="w-full">
@@ -78,13 +75,13 @@ const LogInForm = () => {
             <button className="w-full cursor-pointer text-white bg-blue-500 border rounded py-2 px-10 font-medium">
               Log in
             </button>
-            <button
+            {/* <button
               type="button"
               className="cursor-pointer text-blue-500 font-normal mt-3 rounded-none"
               onClick={() => navigate('/signup')}
             >
               Create new account
-            </button>
+            </button> */}
           </div>
         </form>
       ) : (
