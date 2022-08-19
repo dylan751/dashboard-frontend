@@ -75,13 +75,6 @@ const LogInForm = () => {
             <button className="w-full cursor-pointer text-white bg-blue-500 border rounded py-2 px-10 font-medium">
               Log in
             </button>
-            {/* <button
-              type="button"
-              className="cursor-pointer text-blue-500 font-normal mt-3 rounded-none"
-              onClick={() => navigate('/signup')}
-            >
-              Create new account
-            </button> */}
           </div>
         </form>
       ) : (
