@@ -12,6 +12,8 @@
     "orders": "Orders",
     "employees": "Employees",
     "customers": "Customers",
+    "tours": "Tours",
+    "destinations": "Destinations",
     "apps": "Apps",
     "calendar": "Calendar",
     "kanban": "Kanban",
@@ -74,6 +76,31 @@
     "budget": "Budget",
     "location": "Location",
     "customerId": "Customer ID"
+  },
+
+  "tours": {
+    "title": "Title",
+    "duration": "Duration",
+    "startTime": "Start Time",
+    "rating": "Rating",
+    "hotel": "Hotel",
+    "price": "Price",
+    "vehicle": "Vehicle",
+    "type": "Type",
+    "numberOfPeople": "Number Of People",
+    "description": "Description",
+    "numberOfBooking": "Number Of Booking",
+    "image": "Image",
+    "isTrending": "Is Trending"
+  },
+
+  "destinations": {
+    "tourId": "Tour ID",
+    "name": "Name",
+    "address": "Address",
+    "description": "Description",
+    "content": "Content",
+    "image": "Image"
   },
 
   "calendar": {

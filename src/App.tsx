@@ -16,9 +16,10 @@ import {
   Orders,
   Calendar,
   Employees,
+  Tours,
+  Destinations,
   Stacked,
   Pyramid,
-  Customers,
   Kanban,
   Line,
   Area,
@@ -98,7 +99,9 @@ const App: React.FC = () => {
                 {/* Pages */}
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                {/* <Route path="/customers" element={<Customers />} /> */}
+                <Route path="/tours" element={<Tours />} />
+                <Route path="/destinations" element={<Destinations />} />
 
                 {/* Apss */}
                 <Route path="/kanban" element={<Kanban />} />

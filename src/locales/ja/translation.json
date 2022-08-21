@@ -12,6 +12,8 @@
     "orders": "注文",
     "employees": "会社員",
     "customers": "お客様",
+    "tours": "ツアー",
+    "destinations": "観光地",
     "apps": "アプリ",
     "calendar": "カレンダー",
     "kanban": "カンバン",
@@ -74,6 +76,31 @@
     "budget": "予算",
     "location": "場所",
     "customerId": "お客様ID"
+  },
+
+  "tours": {
+    "title": "名前",
+    "duration": "間隔",
+    "startTime": "始まる時間",
+    "rating": "評価",
+    "hotel": "ホテル",
+    "price": "値段",
+    "vehicle": "車両",
+    "type": "タイプ",
+    "numberOfPeople": "人数",
+    "description": "説明",
+    "numberOfBooking": "予約数",
+    "image": "画像",
+    "isTrending": "トレンド"
+  },
+
+  "destinations": {
+    "tourId": "ツアーID",
+    "name": "名前",
+    "address": "アドレス",
+    "description": "説明",
+    "content": "コンテンツ",
+    "image": "画像"
   },
 
   "calendar": {

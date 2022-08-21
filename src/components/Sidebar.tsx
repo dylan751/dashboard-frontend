@@ -49,8 +49,13 @@ const Sidebar: React.FC = () => {
           icon: <IoMdContacts />,
         },
         {
-          name: `${t('sideBar.customers')}`,
-          url: 'Customers',
+          name: `${t('sideBar.tours')}`,
+          url: 'Tours',
+          icon: <RiContactsLine />,
+        },
+        {
+          name: `${t('sideBar.destinations')}`,
+          url: 'Destinations',
           icon: <RiContactsLine />,
         },
       ],

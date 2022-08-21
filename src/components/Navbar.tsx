@@ -164,18 +164,6 @@ const Navbar: React.FC = () => {
           </button>
         )}
 
-        {/* Google Login Button */}
-        {/* <div>
-          {user ? (
-            <div>Logged In</div>
-          ) : (
-            <GoogleLogin
-              onSuccess={(response) => createOrGetUser(response)}
-              onError={() => console.log('Error')}
-            />
-          )}
-        </div> */}
-
         {isClicked.cart && <Cart />}
         {isClicked.chat && <Chat />}
         {isClicked.notification && <Notification />}

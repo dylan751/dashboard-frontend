@@ -12,6 +12,8 @@
     "orders": "Đơn hàng",
     "employees": "Nhân viên",
     "customers": "Khách hàng",
+    "tours": "Tour du lịch",
+    "destinations": "Địa điểm du lịch",
     "apps": "Ứng dụng",
     "calendar": "Lịch",
     "kanban": "Bảng Kanban",
@@ -74,6 +76,31 @@
     "budget": "Ngân quỹ",
     "location": "Vị trí",
     "customerId": "ID khách hàng"
+  },
+
+  "tours": {
+    "title": "Tên Tour",
+    "duration": "Khoảng thời gian",
+    "startTime": "Bắt đầu",
+    "rating": "Đánh giá",
+    "hotel": "Khách sạn",
+    "price": "Giá",
+    "vehicle": "Phương tiện",
+    "type": "Loại hình",
+    "numberOfPeople": "Số lượng người",
+    "description": "Mô tả",
+    "numberOfBooking": "Số lượng đặt",
+    "image": "Ảnh",
+    "isTrending": "Xu hướng"
+  },
+
+  "destinations": {
+    "tourId": "Tour ID",
+    "name": "Tên",
+    "address": "Địa chỉ",
+    "description": "Mô tả",
+    "content": "Nội dung",
+    "image": "Ảnh"
   },
 
   "calendar": {
