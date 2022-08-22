@@ -11,77 +11,80 @@ import {
   Sort,
   Filter,
 } from '@syncfusion/ej2-react-grids';
-import reviewApi from '../services/reviewApi';
+import contactApi from '../services/contactApi';
 
 import { Header } from '../components';
 import { useTranslation } from 'react-i18next';
-import { Review } from '../models/Review';
+import { Contact } from '../models/Contact';
 
-const Reviews: React.FC = () => {
+const Contacts: React.FC = () => {
   const { t } = useTranslation();
-  const [reviews, setReviews] = useState<Review[]>([]);
+  const [contacts, setContacts] = useState<Contact[]>([]);
 
-  const reviewsGrid = [
+  const contactsGrid = [
     { type: 'checkbox', width: '50' },
 
     {
       field: 'userId',
-      headerText: t('reviews.userId'),
+      headerText: t('contacts.userId'),
       width: '70',
       textAlign: 'Center',
       isPrimaryKey: true,
     },
+
     {
       field: 'name',
-      headerText: t('reviews.name'),
+      headerText: t('contacts.name'),
       width: '100',
       textAlign: 'Center',
     },
+
+    {
+      field: 'phoneNumber',
+      headerText: t('contacts.phoneNumber'),
+      width: '120',
+      textAlign: 'Center',
+      format: 'yMd',
+    },
+
     {
       field: 'email',
-      headerText: t('reviews.email'),
+      headerText: t('contacts.email'),
       width: '150',
       textAlign: 'Center',
       format: 'yMd',
     },
 
     {
-      field: 'tourId',
-      headerText: t('reviews.tourId'),
-      width: '80',
+      field: 'title',
+      headerText: t('contacts.title'),
+      width: '100',
       textAlign: 'Center',
     },
 
     {
-      field: 'rating',
-      headerText: t('reviews.rating'),
-      width: '80',
-      textAlign: 'Center',
-    },
-
-    {
-      field: 'content',
-      headerText: t('reviews.content'),
+      field: 'description',
+      headerText: t('contacts.description'),
       width: '150',
       textAlign: 'Center',
     },
   ];
 
   useEffect(() => {
-    const getAllReviews = async () => {
-      const res = await reviewApi.getListReviews();
-      const allReviews = res.data.data.edges;
-      setReviews(allReviews);
+    const getAllContacts = async () => {
+      const res = await contactApi.getListContacts();
+      const allContacts = res.data.data.edges;
+      setContacts(allContacts);
     };
 
-    getAllReviews();
+    getAllContacts();
   }, []);
 
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category={t('app.page')}title={t('reviews.reviews')}/>
+      <Header category={t('app.page')} title={t('contacts.contacts')} />
       <GridComponent
-        dataSource={reviews}
+        dataSource={contacts}
         allowPaging={true}
         allowSorting={true}
         toolbar={['Delete']}
@@ -89,7 +92,7 @@ const Reviews: React.FC = () => {
         width="auto"
       >
         <ColumnsDirective>
-          {reviewsGrid.map((item, index) => (
+          {contactsGrid.map((item, index) => (
             <ColumnDirective key={index} {...item}></ColumnDirective>
           ))}
         </ColumnsDirective>
@@ -99,4 +102,4 @@ const Reviews: React.FC = () => {
   );
 };
 
-export default Reviews;
+export default Contacts;

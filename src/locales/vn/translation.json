@@ -16,7 +16,10 @@
     "customers": "Khách hàng",
     "tours": "Tour du lịch",
     "destinations": "Địa điểm du lịch",
+    "bookingForm": "Đơn đặt Tour",
     "reviews": "Đánh giá",
+    "contacts": "Thông tin liên lạc",
+    "products":"Sản phẩm",
     "apps": "Ứng dụng",
     "calendar": "Lịch",
     "kanban": "Bảng Kanban",
@@ -110,6 +113,18 @@
     "image": "Ảnh"
   },
 
+  "bookingForm": {
+    "page": "Trang",
+    "bookingForm": "Đơn đặt Tour",
+    "tourId": "Tour ID",
+    "name": "Họ và tên",
+    "phoneNumber": "Số điện thoại",
+    "email": "Email",
+    "numberOfPeople": "Số lượng người",
+    "startTime": "Ngày đi",
+    "endTime": "Ngày về"
+  },
+
   "reviews": {
     "page": "Trang",
     "reviews": "Bình luận",
@@ -119,6 +134,29 @@
     "tourId": "Tour ID",
     "rating": "Đánh giá",
     "content": "Nội dung"
+  },
+
+  "contacts": {
+    "page": "Trang",
+    "contacts": "Thông tin liên lạc",
+    "userId": "User ID",
+    "name": "Tên",
+    "phoneNumber": "Số điện thoại",
+    "email": "Email",
+    "title": "Tiêu đề",
+    "description": "Mô tả"
+  },
+
+  "products": {
+    "page": "Trang",
+    "products": "Sản phẩm",
+    "name": "Tên sản phẩm",
+    "price": "Giá",
+    "quantity": "Số lượng",
+    "description": "Mô tả",
+    "category": "Phân loại",
+    "image": "Ảnh",
+    "count": "Đã mua"
   },
 
   "calendar": {

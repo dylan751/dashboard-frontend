@@ -59,13 +59,23 @@ const Sidebar: React.FC = () => {
           icon: <RiContactsLine />,
         },
         {
-          name: `${t('sideBar.bookingForms')}`,
+          name: `${t('sideBar.bookingForm')}`,
           url: 'Forms',
           icon: <RiContactsLine />,
         },
         {
           name: `${t('sideBar.reviews')}`,
           url: 'Reviews',
+          icon: <RiContactsLine />,
+        },
+        {
+          name: `${t('sideBar.contacts')}`,
+          url: 'Contacts',
+          icon: <RiContactsLine />,
+        },
+        {
+          name: `${t('sideBar.products')}`,
+          url: 'Products',
           icon: <RiContactsLine />,
         },
       ],

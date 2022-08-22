@@ -7,6 +7,8 @@ export { default as Tours } from './Tours';
 export { default as Destinations } from './Destinations';
 export { default as BookingForms } from './BookingForms';
 export { default as Reviews } from './Reviews';
+export { default as Contacts } from './Contacts';
+export { default as Products } from './Products';
 export { default as ColorPicker } from './ColorPicker';
 export { default as Calendar } from './Calendar';
 export { default as Area } from './Charts/Area';

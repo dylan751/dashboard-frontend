@@ -31,6 +31,8 @@ import {
   Editor,
   Reviews,
   BookingForms,
+  Contacts,
+  Products,
 } from './pages';
 
 import { StateContextType, useStateContext } from './contexts/ContextProvider';
@@ -105,6 +107,8 @@ const App: React.FC = () => {
                 <Route path="/destinations" element={<Destinations />} />
                 <Route path="/forms" element={<BookingForms />} />
                 <Route path="/reviews" element={<Reviews />} />
+                <Route path="/contacts" element={<Contacts />} />
+                <Route path="/products" element={<Products />} />
 
                 {/* Apss */}
                 <Route path="/kanban" element={<Kanban />} />

@@ -25,9 +25,9 @@ const BookingForms: React.FC = () => {
     { type: 'checkbox', width: '50' },
 
     {
-      field: 'userId',
-      headerText: t('bookingForm.userId'),
-      width: '120',
+      field: 'tourId',
+      headerText: t('bookingForm.tourId'),
+      width: '70',
       textAlign: 'Center',
       isPrimaryKey: true,
     },
@@ -38,31 +38,38 @@ const BookingForms: React.FC = () => {
       textAlign: 'Center',
     },
     {
-      field: 'email',
-      headerText: t('bookingForm.email'),
+      field: 'phoneNumber',
+      headerText: t('bookingForm.phoneNumber'),
       width: '100',
       textAlign: 'Center',
       format: 'yMd',
     },
 
     {
-      field: 'tourId',
-      headerText: t('bookingForm.tourId'),
-      width: '120',
+      field: 'email',
+      headerText: t('bookingForm.email'),
+      width: '150',
       textAlign: 'Center',
     },
 
     {
-      field: 'rating',
-      headerText: t('bookingForm.rating'),
-      width: '120',
+      field: 'numberOfPeople',
+      headerText: t('bookingForm.numberOfPeople'),
+      width: '80',
       textAlign: 'Center',
     },
 
     {
-      field: 'content',
-      headerText: t('bookingForm.content'),
-      width: '120',
+      field: 'startTime',
+      headerText: t('bookingForm.startTime'),
+      width: '80',
+      textAlign: 'Center',
+    },
+
+    {
+      field: 'endTime',
+      headerText: t('bookingForm.endTime'),
+      width: '80',
       textAlign: 'Center',
     },
   ];
@@ -79,7 +86,7 @@ const BookingForms: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category={t('app.page')}title={t('bookingForm.bookingForm')}/>
+      <Header category={t('app.page')} title={t('bookingForm.bookingForm')} />
       <GridComponent
         dataSource={bookingForm}
         allowPaging={true}

@@ -16,7 +16,10 @@
     "customers": "Customers",
     "tours": "Tours",
     "destinations": "Destinations",
+    "bookingForm": "Booking Form",
     "reviews": "Reviews",
+    "contacts": "Contacts",
+    "products": "Products",
     "apps": "Apps",
     "calendar": "Calendar",
     "kanban": "Kanban",
@@ -110,6 +113,18 @@
     "image": "Image"
   },
 
+  "bookingForm": {
+    "page": "Page",
+    "bookingForm": "Booking Forms",
+    "tourId": "Tour ID",
+    "name": "Name",
+    "phoneNumber": "Phone Number",
+    "email": "Email",
+    "numberOfPeople": "Number Of People",
+    "startTime": "Start Time",
+    "endTime": "End Time"
+  },
+
   "reviews": {
     "page": "Page",
     "reviews": "Reviews",
@@ -119,6 +134,29 @@
     "tourId": "Tour ID",
     "rating": "Rating",
     "content": "Content"
+  },
+
+  "contacts": {
+    "page": "Page",
+    "contacts": "Contacts",
+    "userId": "User ID",
+    "name": "Name",
+    "phoneNumber":"Phone Number",
+    "email": "Email",
+    "title": "Title",
+    "description": "Description"
+  },
+
+  "products": {
+    "page": "Page",
+    "products": "Products",
+    "name": "Name",
+    "price": "Price",
+    "quantity": "Quantity",
+    "description": "Description",
+    "category": "Category",
+    "image": "Image",
+    "count": "Count"
   },
 
   "calendar": {

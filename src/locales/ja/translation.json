@@ -16,7 +16,10 @@
     "customers": "お客様",
     "tours": "ツアー",
     "destinations": "観光地",
+    "bookingForm": "予約フォーム",
     "reviews": "レビュー",
+    "contacts": "コンタクト",
+    "products": "製品",
     "apps": "アプリ",
     "calendar": "カレンダー",
     "kanban": "カンバン",
@@ -110,6 +113,18 @@
     "image": "画像"
   },
 
+  "bookingForm": {
+    "page": "ページ",
+    "bookingForm": "予約フォーム",
+    "tourId": "ツアーID",
+    "name": "名前",
+    "phoneNumber": "電話番号",
+    "email": "Eメール",
+    "numberOfPeople": "人数",
+    "startTime": "始まる時間",
+    "endTime": "終了時間"
+  },
+
   "reviews": {
     "page": "ページ",
     "reviews": "レビュー",
@@ -119,6 +134,29 @@
     "tourId": "ツアーID",
     "rating": "評価",
     "content": "コンテンツ"
+  },
+
+  "contacts": {
+    "page": "ページ",
+    "contacts": "コンタクト",
+    "userId": "ユーザーID",
+    "name": "名前",
+    "phoneNumber":"電話番号",
+    "email": "Eメール",
+    "title": "題名",
+    "description": "説明"
+  },
+
+  "products": {
+    "page": "ページ",
+    "products": "製品",
+    "name": "名前",
+    "price": "値段",
+    "quantity": "量",
+    "description": "説明",
+    "category": "カテゴリー",
+    "image": "画像",
+    "count": "カウント"
   },
 
   "calendar": {
