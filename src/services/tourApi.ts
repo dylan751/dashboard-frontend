@@ -100,9 +100,9 @@ class tourApi {
     );
   };
 
-  deleteIvr = async (tourId) => {
+  deleteTour = async (tourId) => {
     return await authAxios(
-      `${process.env.REACT_APP_API_DOMAIN}/v1/ivr/${tourId}`,
+      `${process.env.REACT_APP_API_DOMAIN}/tours/${tourId}`,
       {
         method: 'DELETE',
         headers: {

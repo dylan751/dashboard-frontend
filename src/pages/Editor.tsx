@@ -18,7 +18,7 @@ const Editor: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category={t('editor.app')} title={t('editor.editor')} />
+      <Header category={t('app.app')} title={t('editor.editor')} />
       <RichTextEditorComponent>
         <EditorData />
         <Inject services={[HtmlEditor, Toolbar, Image, Link, QuickToolbar]} />

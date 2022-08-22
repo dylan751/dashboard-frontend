@@ -45,9 +45,9 @@ class destinationApi {
     );
   };
 
-  deleteIvr = async (destinationId) => {
+  deleteDestination = async (destinationId) => {
     return await authAxios(
-      `${process.env.REACT_APP_API_DOMAIN}/v1/ivr/${destinationId}`,
+      `${process.env.REACT_APP_API_DOMAIN}/destinations/${destinationId}`,
       {
         method: 'DELETE',
         headers: {

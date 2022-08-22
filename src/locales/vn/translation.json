@@ -2,7 +2,9 @@
   "app": {
     "title": "Zuong Dashboard",
     "login": "Đăng nhập",
-    "logout": "Đăng xuất"
+    "logout": "Đăng xuất",
+    "app": "Ứng dụng",
+    "page": "Trang"
   },
 
   "sideBar": {
@@ -14,6 +16,7 @@
     "customers": "Khách hàng",
     "tours": "Tour du lịch",
     "destinations": "Địa điểm du lịch",
+    "reviews": "Đánh giá",
     "apps": "Ứng dụng",
     "calendar": "Lịch",
     "kanban": "Bảng Kanban",
@@ -79,6 +82,8 @@
   },
 
   "tours": {
+    "page": "Trang",
+    "tours": "Tour du lịch",
     "title": "Tên Tour",
     "duration": "Khoảng thời gian",
     "startTime": "Bắt đầu",
@@ -95,12 +100,25 @@
   },
 
   "destinations": {
+    "page": "Trang",
+    "destinations": "Địa điểm du lịch",
     "tourId": "Tour ID",
     "name": "Tên",
     "address": "Địa chỉ",
     "description": "Mô tả",
     "content": "Nội dung",
     "image": "Ảnh"
+  },
+
+  "reviews": {
+    "page": "Trang",
+    "reviews": "Bình luận",
+    "userId": "User ID",
+    "name": "Tên",
+    "email": "Email",
+    "tourId": "Tour ID",
+    "rating": "Đánh giá",
+    "content": "Nội dung"
   },
 
   "calendar": {

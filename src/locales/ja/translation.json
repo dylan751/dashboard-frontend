@@ -2,7 +2,9 @@
   "app": {
     "title": "Zuong ダッシュボード",
     "login": "ログイン",
-    "logout": "ログアウト"
+    "logout": "ログアウト",
+    "app": "アプリ",
+    "page": "ページ"
   },
 
   "sideBar": {
@@ -14,6 +16,7 @@
     "customers": "お客様",
     "tours": "ツアー",
     "destinations": "観光地",
+    "reviews": "レビュー",
     "apps": "アプリ",
     "calendar": "カレンダー",
     "kanban": "カンバン",
@@ -79,6 +82,8 @@
   },
 
   "tours": {
+    "page": "ページ",
+    "tours": "ツアー",
     "title": "名前",
     "duration": "間隔",
     "startTime": "始まる時間",
@@ -95,12 +100,25 @@
   },
 
   "destinations": {
+    "page": "ページ",
+    "destinations": "観光地",
     "tourId": "ツアーID",
     "name": "名前",
     "address": "アドレス",
     "description": "説明",
     "content": "コンテンツ",
     "image": "画像"
+  },
+
+  "reviews": {
+    "page": "ページ",
+    "reviews": "レビュー",
+    "userId": "ユーザーID",
+    "name": "名前",
+    "email": "Eメール",
+    "tourId": "ツアーID",
+    "rating": "評価",
+    "content": "コンテンツ"
   },
 
   "calendar": {

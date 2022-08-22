@@ -58,6 +58,16 @@ const Sidebar: React.FC = () => {
           url: 'Destinations',
           icon: <RiContactsLine />,
         },
+        {
+          name: `${t('sideBar.bookingForms')}`,
+          url: 'Forms',
+          icon: <RiContactsLine />,
+        },
+        {
+          name: `${t('sideBar.reviews')}`,
+          url: 'Reviews',
+          icon: <RiContactsLine />,
+        },
       ],
     },
     {

@@ -19,7 +19,7 @@ import { Destination } from '../models/Destination';
 
 const Destinations: React.FC = () => {
   const { t } = useTranslation();
-  const [destinations, setDestinations] = useState([]);
+  const [destinations, setDestinations] = useState<Destination[]>([]);
 
   const destinationsGridImage = ({ image }: Destination) => {
     return (
@@ -86,7 +86,7 @@ const Destinations: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category="Page" title="Destinations" />
+      <Header category={t('app.page')} title={t('destinations.destinations')}/>
       <GridComponent
         dataSource={destinations}
         allowPaging={true}

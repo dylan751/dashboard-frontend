@@ -2,7 +2,9 @@
   "app": {
     "title": "Zuong Dashboard",
     "login": "Login",
-    "logout": "Logout"
+    "logout": "Logout",
+    "app": "App",
+    "page": "Page"
   },
 
   "sideBar": {
@@ -14,6 +16,7 @@
     "customers": "Customers",
     "tours": "Tours",
     "destinations": "Destinations",
+    "reviews": "Reviews",
     "apps": "Apps",
     "calendar": "Calendar",
     "kanban": "Kanban",
@@ -79,6 +82,8 @@
   },
 
   "tours": {
+    "page": "Page",
+    "tours": "Tours",
     "title": "Title",
     "duration": "Duration",
     "startTime": "Start Time",
@@ -95,12 +100,25 @@
   },
 
   "destinations": {
+    "page": "Page",
+    "destinations": "Destinations",
     "tourId": "Tour ID",
     "name": "Name",
     "address": "Address",
     "description": "Description",
     "content": "Content",
     "image": "Image"
+  },
+
+  "reviews": {
+    "page": "Page",
+    "reviews": "Reviews",
+    "userId": "User ID",
+    "name": "Name",
+    "email": "Email",
+    "tourId": "Tour ID",
+    "rating": "Rating",
+    "content": "Content"
   },
 
   "calendar": {

@@ -19,7 +19,7 @@ import { Tour } from '../models/Tour';
 
 const Tours: React.FC = () => {
   const { t } = useTranslation();
-  const [tours, setTours] = useState([]);
+  const [tours, setTours] = useState<Tour[]>([]);
 
   const tourGridImage = ({ image }: Tour) => {
     return (
@@ -58,12 +58,13 @@ const Tours: React.FC = () => {
       textAlign: 'Center',
       format: 'yMd',
     },
-    {
-      field: 'rating',
-      headerText: t('tours.rating'),
-      width: '100',
-      textAlign: 'Center',
-    },
+
+    // {
+    //   field: 'rating',
+    //   headerText: t('tours.rating'),
+    //   width: '100',
+    //   textAlign: 'Center',
+    // },
 
     {
       field: 'hotel',
@@ -86,19 +87,19 @@ const Tours: React.FC = () => {
       textAlign: 'Center',
     },
 
-    {
-      field: 'type',
-      headerText: t('tours.type'),
-      width: '120',
-      textAlign: 'Center',
-    },
+    // {
+    //   field: 'type',
+    //   headerText: t('tours.type'),
+    //   width: '120',
+    //   textAlign: 'Center',
+    // },
 
-    {
-      field: 'numberOfPeople',
-      headerText: t('tours.numberOfPeople'),
-      width: '120',
-      textAlign: 'Center',
-    },
+    // {
+    //   field: 'numberOfPeople',
+    //   headerText: t('tours.numberOfPeople'),
+    //   width: '120',
+    //   textAlign: 'Center',
+    // },
 
     {
       field: 'description',
@@ -107,19 +108,19 @@ const Tours: React.FC = () => {
       textAlign: 'Center',
     },
 
-    {
-      field: 'numberOfBooking',
-      headerText: t('tours.numberOfBooking'),
-      width: '120',
-      textAlign: 'Center',
-    },
+    // {
+    //   field: 'numberOfBooking',
+    //   headerText: t('tours.numberOfBooking'),
+    //   width: '120',
+    //   textAlign: 'Center',
+    // },
 
-    {
-      field: 'isTrending',
-      headerText: t('tours.isTrending'),
-      width: '120',
-      textAlign: 'Center',
-    },
+    // {
+    //   field: 'isTrending',
+    //   headerText: t('tours.isTrending'),
+    //   width: '120',
+    //   textAlign: 'Center',
+    // },
   ];
 
   useEffect(() => {
@@ -134,7 +135,7 @@ const Tours: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category="Page" title="Tours" />
+      <Header category={t('app.page')} title={t('tours.tours')}/>
       <GridComponent
         dataSource={tours}
         allowPaging={true}

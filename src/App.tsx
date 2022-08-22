@@ -29,6 +29,8 @@ import {
   ColorPicker,
   ColorMapping,
   Editor,
+  Reviews,
+  BookingForms,
 } from './pages';
 
 import { StateContextType, useStateContext } from './contexts/ContextProvider';
@@ -99,9 +101,10 @@ const App: React.FC = () => {
                 {/* Pages */}
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/employees" element={<Employees />} />
-                {/* <Route path="/customers" element={<Customers />} /> */}
                 <Route path="/tours" element={<Tours />} />
                 <Route path="/destinations" element={<Destinations />} />
+                <Route path="/forms" element={<BookingForms />} />
+                <Route path="/reviews" element={<Reviews />} />
 
                 {/* Apss */}
                 <Route path="/kanban" element={<Kanban />} />
