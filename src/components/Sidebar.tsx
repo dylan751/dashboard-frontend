@@ -39,16 +39,6 @@ const Sidebar: React.FC = () => {
       title: `${t('sideBar.pages')}`,
       links: [
         {
-          name: `${t('sideBar.orders')}`,
-          url: 'Orders',
-          icon: <AiOutlineShoppingCart />,
-        },
-        {
-          name: `${t('sideBar.employees')}`,
-          url: 'Employees',
-          icon: <IoMdContacts />,
-        },
-        {
           name: `${t('sideBar.tours')}`,
           url: 'Tours',
           icon: <RiContactsLine />,
@@ -77,6 +67,16 @@ const Sidebar: React.FC = () => {
           name: `${t('sideBar.products')}`,
           url: 'Products',
           icon: <RiContactsLine />,
+        },
+        {
+          name: `${t('sideBar.orders')}`,
+          url: 'Orders',
+          icon: <AiOutlineShoppingCart />,
+        },
+        {
+          name: `${t('sideBar.employees')}`,
+          url: 'Employees',
+          icon: <IoMdContacts />,
         },
       ],
     },

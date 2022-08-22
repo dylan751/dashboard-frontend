@@ -101,14 +101,14 @@ const App: React.FC = () => {
                 <Route path="/ecommerce" element={<Ecommerce />} />
 
                 {/* Pages */}
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
                 <Route path="/tours" element={<Tours />} />
                 <Route path="/destinations" element={<Destinations />} />
                 <Route path="/forms" element={<BookingForms />} />
                 <Route path="/reviews" element={<Reviews />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/products" element={<Products />} />
+                <Route path="/orders" element={<Orders />} />
+                <Route path="/employees" element={<Employees />} />
 
                 {/* Apss */}
                 <Route path="/kanban" element={<Kanban />} />

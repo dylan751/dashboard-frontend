@@ -41,7 +41,7 @@ const Destinations: React.FC = () => {
     {
       field: 'tourId',
       headerText: t('destinations.tourId'),
-      width: '50',
+      width: '70',
       textAlign: 'Center',
       isPrimaryKey: true,
     },

@@ -135,7 +135,7 @@ const Tours: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category={t('app.page')} title={t('tours.tours')}/>
+      <Header category={t('app.page')} title={t('tours.tours')} />
       <GridComponent
         dataSource={tours}
         allowPaging={true}
