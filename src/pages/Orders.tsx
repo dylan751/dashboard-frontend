@@ -14,11 +14,7 @@ import {
   Inject,
 } from '@syncfusion/ej2-react-grids';
 
-import {
-  gridOrderImage,
-  gridOrderStatus,
-  ordersData,
-} from '../data/dummy';
+import { gridOrderImage, gridOrderStatus, ordersData } from '../data/dummy';
 import { Header } from '../components';
 import { useTranslation } from 'react-i18next';
 
@@ -77,7 +73,7 @@ const Orders: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category={t('app.page')}title={t('orders.orders')}/>
+      <Header category={t('app.page')} title={t('orders.orders')} />
       <GridComponent
         id="gridcomp"
         dataSource={ordersData}

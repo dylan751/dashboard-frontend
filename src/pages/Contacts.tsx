@@ -25,14 +25,6 @@ const Contacts: React.FC = () => {
     { type: 'checkbox', width: '50' },
 
     {
-      field: 'userId',
-      headerText: t('contacts.userId'),
-      width: '70',
-      textAlign: 'Center',
-      isPrimaryKey: true,
-    },
-
-    {
       field: 'name',
       headerText: t('contacts.name'),
       width: '100',

@@ -4,7 +4,8 @@
     "login": "Đăng nhập",
     "logout": "Đăng xuất",
     "app": "Ứng dụng",
-    "page": "Trang"
+    "page": "Trang",
+    "chart": "Biểu đồ"
   },
 
   "sideBar": {
@@ -19,7 +20,7 @@
     "bookingForm": "Đơn đặt Tour",
     "reviews": "Đánh giá",
     "contacts": "Thông tin liên lạc",
-    "products":"Sản phẩm",
+    "products": "Sản phẩm",
     "apps": "Ứng dụng",
     "calendar": "Lịch",
     "kanban": "Bảng Kanban",
@@ -106,6 +107,7 @@
     "page": "Trang",
     "destinations": "Địa điểm du lịch",
     "tourId": "Tour ID",
+    "tourName": "Tên Tour",
     "name": "Tên",
     "address": "Địa chỉ",
     "description": "Mô tả",
@@ -187,5 +189,10 @@
   "area": {
     "chart": "Biểu đồ",
     "inflationRateInPercentage": "Tỷ lệ lạm phát tính theo phần trăm"
+  },
+
+  "bar": {
+    "tourPriceChart": "Biểu đồ theo giá Tour",
+    "tourPrice": "Giá Tour"
   }
 }

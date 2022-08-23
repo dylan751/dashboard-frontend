@@ -3,7 +3,12 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Link, NavLink } from 'react-router-dom';
 import { SiShopware } from 'react-icons/si';
-import { MdOutlineCancel } from 'react-icons/md';
+import {
+  MdOutlineCancel,
+  MdOutlineTour,
+  MdOutlineLocationOn,
+  MdOutlineRateReview,
+} from 'react-icons/md';
 import { FiEdit, FiPieChart, FiShoppingBag } from 'react-icons/fi';
 import {
   AiOutlineAreaChart,
@@ -12,8 +17,8 @@ import {
   AiOutlineShoppingCart,
   AiOutlineStock,
 } from 'react-icons/ai';
-import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine, RiStockLine } from 'react-icons/ri';
+import { IoMdContact, IoMdContacts, IoMdPaper } from 'react-icons/io';
+import { RiShoppingBasket2Line, RiStockLine } from 'react-icons/ri';
 import { BsBarChart, BsKanban } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { GiLouvrePyramid } from 'react-icons/gi';
@@ -41,37 +46,37 @@ const Sidebar: React.FC = () => {
         {
           name: `${t('sideBar.tours')}`,
           url: 'Tours',
-          icon: <RiContactsLine />,
+          icon: <MdOutlineTour />,
         },
         {
           name: `${t('sideBar.destinations')}`,
           url: 'Destinations',
-          icon: <RiContactsLine />,
+          icon: <MdOutlineLocationOn />,
         },
         {
           name: `${t('sideBar.bookingForm')}`,
           url: 'Forms',
-          icon: <RiContactsLine />,
+          icon: <IoMdPaper />,
         },
         {
           name: `${t('sideBar.reviews')}`,
           url: 'Reviews',
-          icon: <RiContactsLine />,
+          icon: <MdOutlineRateReview />,
         },
         {
           name: `${t('sideBar.contacts')}`,
           url: 'Contacts',
-          icon: <RiContactsLine />,
+          icon: <IoMdContact />,
         },
         {
           name: `${t('sideBar.products')}`,
           url: 'Products',
-          icon: <RiContactsLine />,
+          icon: <AiOutlineShoppingCart />,
         },
         {
           name: `${t('sideBar.orders')}`,
           url: 'Orders',
-          icon: <AiOutlineShoppingCart />,
+          icon: <RiShoppingBasket2Line />,
         },
         {
           name: `${t('sideBar.employees')}`,

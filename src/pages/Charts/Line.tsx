@@ -7,7 +7,7 @@ const Line: React.FC = () => {
 
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
-      <Header category={t('line.chart')} title={t('line.inflationRate')} />
+      <Header category={t('app.chart')} title={t('line.inflationRate')} />
       <div className="w-full">
         <LineChart />
       </div>

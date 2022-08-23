@@ -25,13 +25,6 @@ const Reviews: React.FC = () => {
     { type: 'checkbox', width: '50' },
 
     {
-      field: 'userId',
-      headerText: t('reviews.userId'),
-      width: '70',
-      textAlign: 'Center',
-      isPrimaryKey: true,
-    },
-    {
       field: 'name',
       headerText: t('reviews.name'),
       width: '100',

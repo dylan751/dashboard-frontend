@@ -39,9 +39,9 @@ const Destinations: React.FC = () => {
     },
 
     {
-      field: 'tourId',
-      headerText: t('destinations.tourId'),
-      width: '70',
+      field: 'tourName',
+      headerText: t('destinations.tourName'),
+      width: '100',
       textAlign: 'Center',
       isPrimaryKey: true,
     },
@@ -49,7 +49,7 @@ const Destinations: React.FC = () => {
     {
       field: 'name',
       headerText: t('destinations.name'),
-      width: '120',
+      width: '100',
       textAlign: 'Center',
       isPrimaryKey: true,
     },

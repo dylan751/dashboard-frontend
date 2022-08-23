@@ -4,7 +4,8 @@
     "login": "Login",
     "logout": "Logout",
     "app": "App",
-    "page": "Page"
+    "page": "Page",
+    "chart": "Chart"
   },
 
   "sideBar": {
@@ -106,6 +107,7 @@
     "page": "Page",
     "destinations": "Destinations",
     "tourId": "Tour ID",
+    "tourName": "Tour Name",
     "name": "Name",
     "address": "Address",
     "description": "Description",
@@ -141,7 +143,7 @@
     "contacts": "Contacts",
     "userId": "User ID",
     "name": "Name",
-    "phoneNumber":"Phone Number",
+    "phoneNumber": "Phone Number",
     "email": "Email",
     "title": "Title",
     "description": "Description"
@@ -187,5 +189,10 @@
   "area": {
     "chart": "Chart",
     "inflationRateInPercentage": "Inflation Rate in Percentage"
+  },
+
+  "bar": {
+    "tourPriceChart": "Tour Price Chart",
+    "tourPrice": "Tour Price"
   }
 }

@@ -87,40 +87,12 @@ const Tours: React.FC = () => {
       textAlign: 'Center',
     },
 
-    // {
-    //   field: 'type',
-    //   headerText: t('tours.type'),
-    //   width: '120',
-    //   textAlign: 'Center',
-    // },
-
-    // {
-    //   field: 'numberOfPeople',
-    //   headerText: t('tours.numberOfPeople'),
-    //   width: '120',
-    //   textAlign: 'Center',
-    // },
-
     {
       field: 'description',
       headerText: t('tours.description'),
       width: '120',
       textAlign: 'Center',
     },
-
-    // {
-    //   field: 'numberOfBooking',
-    //   headerText: t('tours.numberOfBooking'),
-    //   width: '120',
-    //   textAlign: 'Center',
-    // },
-
-    // {
-    //   field: 'isTrending',
-    //   headerText: t('tours.isTrending'),
-    //   width: '120',
-    //   textAlign: 'Center',
-    // },
   ];
 
   useEffect(() => {
@@ -140,7 +112,7 @@ const Tours: React.FC = () => {
         dataSource={tours}
         allowPaging={true}
         allowSorting={true}
-        toolbar={['Delete']}
+        toolbar={['Add', 'Edit', 'Delete']}
         editSettings={{ allowDeleting: true, allowEditing: true }}
         width="auto"
       >

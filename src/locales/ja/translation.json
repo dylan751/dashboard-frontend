@@ -4,7 +4,8 @@
     "login": "ログイン",
     "logout": "ログアウト",
     "app": "アプリ",
-    "page": "ページ"
+    "page": "ページ",
+    "chart": "表"
   },
 
   "sideBar": {
@@ -106,6 +107,7 @@
     "page": "ページ",
     "destinations": "観光地",
     "tourId": "ツアーID",
+    "tourName": "ツアー名",
     "name": "名前",
     "address": "アドレス",
     "description": "説明",
@@ -187,5 +189,10 @@
   "area": {
     "chart": "表",
     "inflationRateInPercentage": "パーセンテージで表したインフレ率"
+  },
+
+  "bar": {
+    "tourPriceChart": "ツアーの値段の表",
+    "tourPrice": "ツアーの値段"
   }
 }
