@@ -10,6 +10,7 @@ import {
   Toolbar,
   Sort,
   Filter,
+  Resize,
 } from '@syncfusion/ej2-react-grids';
 
 import { Header } from '../components';
@@ -19,7 +20,7 @@ import { Destination } from '../models/Destination';
 
 const Destinations: React.FC = () => {
   const { t } = useTranslation();
-  const [destinations, setDestinations] = useState<Destination[]>([]);
+  const [data, setData] = useState<any>([]);
 
   const destinationsGridImage = ({ image }: Destination) => {
     return (
@@ -32,6 +33,7 @@ const Destinations: React.FC = () => {
   const destinationsGrid = [
     { type: 'checkbox', width: '50' },
     {
+      field: 'image',
       headerText: t('destinations.image'),
       width: '80',
       template: destinationsGridImage,
@@ -39,11 +41,18 @@ const Destinations: React.FC = () => {
     },
 
     {
+      field: 'tourId',
+      headerText: t('destinations.tourId'),
+      width: '80',
+      textAlign: 'Center',
+      isPrimaryKey: true,
+    },
+
+    {
       field: 'tourName',
       headerText: t('destinations.tourName'),
       width: '100',
       textAlign: 'Center',
-      isPrimaryKey: true,
     },
 
     {
@@ -51,7 +60,6 @@ const Destinations: React.FC = () => {
       headerText: t('destinations.name'),
       width: '100',
       textAlign: 'Center',
-      isPrimaryKey: true,
     },
     {
       field: 'address',
@@ -64,7 +72,6 @@ const Destinations: React.FC = () => {
       headerText: t('destinations.description'),
       width: '150',
       textAlign: 'Center',
-      format: 'yMd',
     },
     {
       field: 'content',
@@ -74,25 +81,74 @@ const Destinations: React.FC = () => {
     },
   ];
 
-  useEffect(() => {
-    const getAllDestinations = async () => {
-      const res = await destinationApi.getListDestinations();
-      const allDestinations = res.data.data.edges;
-      setDestinations(allDestinations);
-    };
+  const getAllDestinations = async () => {
+    const res = await destinationApi.getListDestinations();
+    const allDestinations = res.data.data.edges;
+    setData({ result: allDestinations, count: allDestinations.length });
+  };
 
+  useEffect(() => {
     getAllDestinations();
   }, []);
 
+  const dataStateChange = (args: any) => {
+    if (args.action.action !== 'edit') {
+      getAllDestinations();
+    }
+  };
+
+  const dataSourceChanged = async (state: any) => {
+    if (state.action === 'add') {
+      // Add request
+      try {
+        await destinationApi.addDestination(state.data);
+        state.endEdit();
+      } catch (err) {
+        state.endEdit();
+        throw new Error();
+      }
+    } else if (state.action === 'edit') {
+      // Update request
+      try {
+        await destinationApi.updateDestination(
+          (state.data as Destination).destinationId,
+          state.data,
+        );
+        state.endEdit();
+      } catch (err) {
+        state.endEdit();
+        throw new Error();
+      }
+    } else if (state.requestType === 'delete') {
+      // Delete request
+      try {
+        await destinationApi.deleteDestination(state.data[0].destinationId);
+        state.endEdit();
+      } catch (err) {
+        state.endEdit();
+        throw new Error();
+      }
+    }
+  };
+
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category={t('app.page')} title={t('destinations.destinations')}/>
+      <Header category={t('app.page')} title={t('destinations.destinations')} />
       <GridComponent
-        dataSource={destinations}
+        id="destinations"
+        dataSource={data}
         allowPaging={true}
+        pageSettings={{ pageSize: 8 }}
         allowSorting={true}
-        toolbar={['Delete']}
-        editSettings={{ allowDeleting: true, allowEditing: true }}
+        allowResizing={true}
+        toolbar={['Add', 'Edit', 'Delete', 'Update', 'Cancel']}
+        editSettings={{
+          allowAdding: true,
+          allowEditing: true,
+          allowDeleting: true,
+        }}
+        dataSourceChanged={dataSourceChanged}
+        dataStateChange={dataStateChange}
         width="auto"
       >
         <ColumnsDirective>
@@ -100,7 +156,9 @@ const Destinations: React.FC = () => {
             <ColumnDirective key={index} {...item}></ColumnDirective>
           ))}
         </ColumnsDirective>
-        <Inject services={[Page, Toolbar, Selection, Edit, Sort, Filter]} />
+        <Inject
+          services={[Page, Toolbar, Selection, Edit, Sort, Filter, Resize]}
+        />
       </GridComponent>
     </div>
   );

@@ -10,6 +10,7 @@ import {
   Toolbar,
   Sort,
   Filter,
+  Resize,
 } from '@syncfusion/ej2-react-grids';
 import tourApi from '../services/tourApi';
 
@@ -19,7 +20,7 @@ import { Tour } from '../models/Tour';
 
 const Tours: React.FC = () => {
   const { t } = useTranslation();
-  const [tours, setTours] = useState<Tour[]>([]);
+  const [data, setData] = useState<any>([]);
 
   const tourGridImage = ({ image }: Tour) => {
     return (
@@ -32,6 +33,7 @@ const Tours: React.FC = () => {
   const toursGrid = [
     { type: 'checkbox', width: '50' },
     {
+      field: 'image',
       headerText: t('tours.image'),
       width: '100',
       template: tourGridImage,
@@ -45,6 +47,7 @@ const Tours: React.FC = () => {
       textAlign: 'Center',
       isPrimaryKey: true,
     },
+
     {
       field: 'duration',
       headerText: t('tours.duration'),
@@ -58,13 +61,6 @@ const Tours: React.FC = () => {
       textAlign: 'Center',
       format: 'yMd',
     },
-
-    // {
-    //   field: 'rating',
-    //   headerText: t('tours.rating'),
-    //   width: '100',
-    //   textAlign: 'Center',
-    // },
 
     {
       field: 'hotel',
@@ -88,6 +84,13 @@ const Tours: React.FC = () => {
     },
 
     {
+      field: 'type',
+      headerText: t('tours.type'),
+      width: '100',
+      textAlign: 'Center',
+    },
+
+    {
       field: 'description',
       headerText: t('tours.description'),
       width: '120',
@@ -95,25 +98,71 @@ const Tours: React.FC = () => {
     },
   ];
 
-  useEffect(() => {
-    const getAllTours = async () => {
-      const res = await tourApi.getListTours();
-      const allTours = res.data.data.edges;
-      setTours(allTours);
-    };
+  const getAllTours = async () => {
+    const res = await tourApi.getListTours();
+    const allTours = res.data.data.edges;
+    setData({ result: allTours, count: allTours.length });
+  };
 
+  useEffect(() => {
     getAllTours();
   }, []);
+
+  const dataStateChange = (args: any) => {
+    if (args.action.action !== 'edit') {
+      getAllTours();
+    }
+  };
+
+  const dataSourceChanged = async (state: any) => {
+    if (state.action === 'add') {
+      // Add request
+      try {
+        await tourApi.addTour(state.data);
+        state.endEdit();
+      } catch (err) {
+        state.endEdit();
+        throw new Error();
+      }
+    } else if (state.action === 'edit') {
+      // Update request
+      try {
+        await tourApi.updateTour((state.data as Tour).tourId, state.data);
+        state.endEdit();
+      } catch (err) {
+        state.endEdit();
+        throw new Error();
+      }
+    } else if (state.requestType === 'delete') {
+      // Delete request
+      try {
+        await tourApi.deleteTour(state.data[0].tourId);
+        state.endEdit();
+      } catch (err) {
+        state.endEdit();
+        throw new Error();
+      }
+    }
+  };
 
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
       <Header category={t('app.page')} title={t('tours.tours')} />
       <GridComponent
-        dataSource={tours}
+        id="tours"
+        dataSource={data}
         allowPaging={true}
+        pageSettings={{ pageSize: 8 }}
         allowSorting={true}
-        toolbar={['Add', 'Edit', 'Delete']}
-        editSettings={{ allowDeleting: true, allowEditing: true }}
+        allowResizing={true}
+        toolbar={['Add', 'Edit', 'Delete', 'Update', 'Cancel']}
+        editSettings={{
+          allowAdding: true,
+          allowEditing: true,
+          allowDeleting: true,
+        }}
+        dataSourceChanged={dataSourceChanged}
+        dataStateChange={dataStateChange}
         width="auto"
       >
         <ColumnsDirective>
@@ -121,7 +170,9 @@ const Tours: React.FC = () => {
             <ColumnDirective key={index} {...item}></ColumnDirective>
           ))}
         </ColumnsDirective>
-        <Inject services={[Page, Toolbar, Selection, Edit, Sort, Filter]} />
+        <Inject
+          services={[Page, Toolbar, Selection, Edit, Sort, Filter, Resize]}
+        />
       </GridComponent>
     </div>
   );

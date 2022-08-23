@@ -10,6 +10,7 @@ import {
   Toolbar,
   Sort,
   Filter,
+  Resize,
 } from '@syncfusion/ej2-react-grids';
 import reviewApi from '../services/reviewApi';
 
@@ -19,7 +20,7 @@ import { Review } from '../models/Review';
 
 const Reviews: React.FC = () => {
   const { t } = useTranslation();
-  const [reviews, setReviews] = useState<Review[]>([]);
+  const [data, setData] = useState<any>([]);
 
   const reviewsGrid = [
     { type: 'checkbox', width: '50' },
@@ -60,25 +61,74 @@ const Reviews: React.FC = () => {
     },
   ];
 
-  useEffect(() => {
-    const getAllReviews = async () => {
-      const res = await reviewApi.getListReviews();
-      const allReviews = res.data.data.edges;
-      setReviews(allReviews);
-    };
+  const getAllReviews = async () => {
+    const res = await reviewApi.getListReviews();
+    const allReviews = res.data.data.edges;
+    setData({ result: allReviews, count: allReviews.length });
+  };
 
+  useEffect(() => {
     getAllReviews();
   }, []);
 
+  const dataStateChange = (args: any) => {
+    if (args.action.action !== 'edit') {
+      getAllReviews();
+    }
+  };
+
+  const dataSourceChanged = async (state: any) => {
+    if (state.action === 'add') {
+      // Add request
+      try {
+        await reviewApi.addReview(state.data);
+        state.endEdit();
+      } catch (err) {
+        state.endEdit();
+        throw new Error();
+      }
+    } else if (state.action === 'edit') {
+      // Update request
+      try {
+        await reviewApi.updateReview(
+          (state.data as Review).reviewId,
+          state.data,
+        );
+        state.endEdit();
+      } catch (err) {
+        state.endEdit();
+        throw new Error();
+      }
+    } else if (state.requestType === 'delete') {
+      // Delete request
+      try {
+        await reviewApi.deleteReview(state.data[0].reviewId);
+        state.endEdit();
+      } catch (err) {
+        state.endEdit();
+        throw new Error();
+      }
+    }
+  };
+
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category={t('app.page')}title={t('reviews.reviews')}/>
+      <Header category={t('app.page')} title={t('reviews.reviews')} />
       <GridComponent
-        dataSource={reviews}
+        id="reviews"
+        dataSource={data}
         allowPaging={true}
+        pageSettings={{ pageSize: 8 }}
         allowSorting={true}
-        toolbar={['Delete']}
-        editSettings={{ allowDeleting: true, allowEditing: true }}
+        allowResizing={true}
+        toolbar={['Add', 'Edit', 'Delete', 'Update', 'Cancel']}
+        editSettings={{
+          allowAdding: true,
+          allowEditing: true,
+          allowDeleting: true,
+        }}
+        dataSourceChanged={dataSourceChanged}
+        dataStateChange={dataStateChange}
         width="auto"
       >
         <ColumnsDirective>
@@ -86,7 +136,9 @@ const Reviews: React.FC = () => {
             <ColumnDirective key={index} {...item}></ColumnDirective>
           ))}
         </ColumnsDirective>
-        <Inject services={[Page, Toolbar, Selection, Edit, Sort, Filter]} />
+        <Inject
+          services={[Page, Toolbar, Selection, Edit, Sort, Filter, Resize]}
+        />
       </GridComponent>
     </div>
   );
