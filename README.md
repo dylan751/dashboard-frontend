@@ -1,6 +1,6 @@
 # Dashboard App Domain
 
-https://dashboard-c97ivyiqz-muoi07052001.vercel.app
+https://dashboard-app-ten-topaz.vercel.app
 
 # Getting Started with Create React App
 
