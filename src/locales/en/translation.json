@@ -194,5 +194,10 @@
   "bar": {
     "tourPriceChart": "Tour Price Chart",
     "tourPrice": "Tour Price"
+  },
+
+  "pie": {
+    "productPieChart": "Product Price Chart",
+    "productCategoryPieChart": "Product Category Pie Chart"
   }
 }

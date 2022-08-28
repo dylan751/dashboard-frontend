@@ -194,5 +194,10 @@
   "bar": {
     "tourPriceChart": "Biểu đồ theo giá Tour",
     "tourPrice": "Giá Tour"
+  },
+
+  "pie": {
+    "productPieChart": "Biểu đồ tròn sản phẩm",
+    "productCategoryPieChart": "Biểu đồ theo loại sản phẩm"
   }
 }

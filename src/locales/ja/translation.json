@@ -194,5 +194,10 @@
   "bar": {
     "tourPriceChart": "ツアーの値段の表",
     "tourPrice": "ツアーの値段"
+  },
+
+  "pie": {
+    "productPieChart": "製品円グラフ",
+    "productCategoryPieChart": "製品のカテゴリーの円グラフ"
   }
 }
