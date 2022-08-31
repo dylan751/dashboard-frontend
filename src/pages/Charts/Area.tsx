@@ -9,7 +9,7 @@ import {
   SplineAreaSeries,
   AxisModel,
 } from '@syncfusion/ej2-react-charts';
-import { Header } from '../../components';
+import { ChartsHeader } from '../../components';
 import {
   StateContextType,
   useStateContext,
@@ -28,7 +28,7 @@ const Area: React.FC = () => {
 
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
-      <Header
+      <ChartsHeader
         category={t('app.chart')}
         title={t('area.inflationRateInPercentage')}
       />
