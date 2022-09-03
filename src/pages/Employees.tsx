@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import {
   GridComponent,
   ColumnsDirective,
@@ -66,7 +67,11 @@ const Employees: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category={t('app.page')} title={t('employees.employees')}/>
+      <Helmet>
+        <title>Employees</title>
+        <meta name="employees-description" content="Employees" />
+      </Helmet>
+      <Header category={t('app.page')} title={t('employees.employees')} />
       <GridComponent
         dataSource={employeesData}
         allowPaging={true}

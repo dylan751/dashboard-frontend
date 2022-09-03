@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import {
   GridComponent,
   ColumnsDirective,
@@ -133,6 +134,10 @@ const Destinations: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl">
+      <Helmet>
+        <title>Destinations</title>
+        <meta name="destinations-description" content="Destinations" />
+      </Helmet>
       <Header category={t('app.page')} title={t('destinations.destinations')} />
       <GridComponent
         id="destinations"

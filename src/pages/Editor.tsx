@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import {
   HtmlEditor,
   Image,
@@ -18,6 +19,10 @@ const Editor: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+      <Helmet>
+        <title>Editor</title>
+        <meta name="editor-description" content="Editor" />
+      </Helmet>
       <Header category={t('app.app')} title={t('editor.editor')} />
       <RichTextEditorComponent>
         <EditorData />

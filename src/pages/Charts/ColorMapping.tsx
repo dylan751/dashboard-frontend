@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import {
   ChartComponent,
   SeriesCollectionDirective,
@@ -30,6 +31,10 @@ const ColorMapping = () => {
 
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <Helmet>
+        <title>Color Mapping Chart</title>
+        <meta name="color-mapping-chart-description" content="Color Mapping Chart" />
+      </Helmet>
       <ChartsHeader
         category="Color Mappping"
         title="USA CLIMATE - WEATHER BY MONTH"
@@ -60,7 +65,7 @@ const ColorMapping = () => {
           </SeriesCollectionDirective>
           <RangeColorSettingsDirective>
             {rangeColorMapping.map((item, index) => (
-              <RangeColorSettingDirective key={index} {...item as any} />
+              <RangeColorSettingDirective key={index} {...(item as any)} />
             ))}
           </RangeColorSettingsDirective>
         </ChartComponent>

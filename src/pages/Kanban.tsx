@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import {
   KanbanComponent,
   ColumnsDirective,
@@ -77,6 +78,10 @@ const Kanban: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+      <Helmet>
+        <title>Kanban</title>
+        <meta name="kanban-description" content="Kanban" />
+      </Helmet>
       <Header category={t('kanban.app')} title={t('kanban.kanban')} />
       <KanbanComponent
         id="kanban"

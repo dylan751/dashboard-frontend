@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
 import { ChartsHeader, Pie as PieChart } from '../../components';
@@ -25,6 +26,10 @@ const Pie: React.FC = () => {
 
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <Helmet>
+        <title>Pie Chart</title>
+        <meta name="pie-chart-description" content="Pie Chart" />
+      </Helmet>
       <ChartsHeader
         category={t('pie.productPieChart')}
         title={t('pie.productCategoryPieChart')}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import {
   ScheduleComponent,
   Day,
@@ -20,6 +21,10 @@ const Calendar: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+      <Helmet>
+        <title>Calendar</title>
+        <meta name="calendar-description" content="Calendar" />
+      </Helmet>
       <Header category={t('app.app')} title={t('calendar.calendar')} />
       <ScheduleComponent
         height="650px"

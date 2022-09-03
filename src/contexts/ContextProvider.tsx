@@ -60,7 +60,7 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
   const [currentMode, setCurrentMode] = useState('Light');
   const [themeSettings, setThemeSettings] = useState(false); // Is the Theme Settings Sidebar currently opened or closed
 
-  const accessToken = localStorage.getItem('accessToken');
+  const accessToken = localStorage.getItem('accessToken'); // For Authentication
 
   const setUser = (data: UserInfo | undefined) => {
     setCurrentUser(data);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import {
   ChartComponent,
   SeriesCollectionDirective,
@@ -38,6 +39,10 @@ const Financial = () => {
 
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <Helmet>
+        <title>Financial Chart</title>
+        <meta name="financial-chart-description" content="Financial Chart" />
+      </Helmet>
       <ChartsHeader category="Financial" title="AAPLE Historical" />
       <div className="w-full">
         <ChartComponent

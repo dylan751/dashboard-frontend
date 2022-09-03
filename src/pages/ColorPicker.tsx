@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { ColorPickerComponent } from '@syncfusion/ej2-react-inputs';
 import { Header } from '../components';
 import { useTranslation } from 'react-i18next';
@@ -15,10 +16,11 @@ const ColorPicker: React.FC = () => {
 
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-      <Header
-        category={t('app.app')}
-        title={t('colorPicker.colorPicker')}
-      />
+      <Helmet>
+        <title>Color Picker</title>
+        <meta name="color-picker-description" content="Color Picker" />
+      </Helmet>
+      <Header category={t('app.app')} title={t('colorPicker.colorPicker')} />
       <div className="text-center">
         <div id="preview-pen"></div>
         <div className="flex justify-center items-center gap-20 flex-wrap">
