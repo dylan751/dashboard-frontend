@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
     currentColor,
   } = useStateContext() as StateContextType;
   const navigate = useNavigate();
-  const { currentUser, setUser } = useStateContext() as StateContextType;
+  const { setUser, accessToken } = useStateContext() as StateContextType;
 
   // If on mobile -> Initially close the Sidebar
   useEffect(() => {
@@ -126,7 +126,7 @@ const Navbar: React.FC = () => {
           color={currentColor}
           icon={<RiNotification3Line />}
         />
-        {!currentUser ? (
+        {!accessToken ? (
           <TooltipComponent content="Profile" position="BottomCenter">
             <div
               className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg ml-4"
@@ -145,7 +145,10 @@ const Navbar: React.FC = () => {
           </TooltipComponent>
         ) : (
           <button
-            onClick={() => setUser(undefined)}
+            onClick={() => {
+              localStorage.removeItem('accessToken');
+              setUser(undefined);
+            }}
             className="border-none rounded py-0 px-4 text-white ml-4"
             style={{ background: currentColor }}
           >
@@ -154,7 +157,7 @@ const Navbar: React.FC = () => {
         )}
 
         {/* Login Button */}
-        {!currentUser && (
+        {!accessToken && (
           <button
             onClick={() => {
               navigate('/login');

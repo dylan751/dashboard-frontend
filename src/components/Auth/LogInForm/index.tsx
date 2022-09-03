@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LogInForm = () => {
   const navigate = useNavigate();
-  const { currentUser, setUser } = useStateContext() as StateContextType;
+  const { setUser, accessToken } = useStateContext() as StateContextType;
   const emailInputRef = useRef<any>(null);
   const passwordInputRef = useRef<any>(null);
 
@@ -37,14 +37,13 @@ const LogInForm = () => {
 
   // set current user then redirect to home page
   useEffect(() => {
-    if (currentUser) {
+    if (accessToken) {
       navigate('/');
     }
-  }, [currentUser, navigate]);
+  }, [accessToken, navigate]);
 
   return (
     <div className="mx-auto w-1/4 pt-20 mt-24">
-      {!currentUser ? (
         <form
           onSubmit={submitHandler}
           className="flex flex-col gap-2 justify-center px-8 py-12 border shadow-lg shadow-blue-200 bg-white items-center m-0"
@@ -77,9 +76,6 @@ const LogInForm = () => {
             </button>
           </div>
         </form>
-      ) : (
-        <p>Logged in</p>
-      )}
     </div>
   );
 };

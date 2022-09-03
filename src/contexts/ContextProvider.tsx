@@ -21,6 +21,7 @@ export type StateContextType = {
   setUser: (data: UserInfo | undefined) => void;
   setColor: (color: string) => void;
   setMode: (mode: BaseSyntheticEvent) => void;
+  accessToken: string | null;
 };
 
 interface NavbarInterface {
@@ -46,7 +47,12 @@ const initialState: NavbarInterface = {
 };
 
 export const ContextProvider = ({ children }: ContextProviderProps) => {
-  const [currentUser, setCurrentUser] = useState<UserInfo | undefined>();
+  const [currentUser, setCurrentUser] = useState<UserInfo | undefined>({
+    userId: 0,
+    accessToken: '',
+    email: '',
+  });
+
   const [activeMenu, setActiveMenu] = useState(true);
   const [isClicked, setIsClicked] = useState(initialState);
   const [screenSize, setScreenSize] = useState(undefined); // To auto closing Sidebar if on Mobile
@@ -54,12 +60,13 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
   const [currentMode, setCurrentMode] = useState('Light');
   const [themeSettings, setThemeSettings] = useState(false); // Is the Theme Settings Sidebar currently opened or closed
 
+  const accessToken = localStorage.getItem('accessToken');
+
   const setUser = (data: UserInfo | undefined) => {
     setCurrentUser(data);
     if (data && data.accessToken) {
       localStorage.setItem('accessToken', data.accessToken); // Save the progress -> After the user login again, the user login remains
     }
-
   };
 
   const setMode = (e: BaseSyntheticEvent) => {
@@ -100,6 +107,7 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
         setUser,
         setColor,
         setMode,
+        accessToken,
       }}
     >
       {children}

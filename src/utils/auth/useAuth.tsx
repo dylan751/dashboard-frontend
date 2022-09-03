@@ -4,7 +4,7 @@ import {
 } from '../../contexts/ContextProvider';
 
 const useAuth = () => {
-  const { currentUser, setUser } = useStateContext() as StateContextType;
+  const { currentUser, setUser, accessToken } = useStateContext() as StateContextType;
   const resetCurrentUser = () => {
     setUser(undefined);
   };
@@ -19,7 +19,7 @@ const useAuth = () => {
     removeStore();
   };
 
-  return { currentUser, setUser, logout };
+  return { currentUser, setUser, logout, accessToken };
 };
 
 export default useAuth;
