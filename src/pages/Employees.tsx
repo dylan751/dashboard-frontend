@@ -12,7 +12,6 @@ import {
 
 import {
   employeesData,
-  employeesGrid,
   gridEmployeeCountry,
   gridEmployeeProfile,
 } from '../data/dummy';

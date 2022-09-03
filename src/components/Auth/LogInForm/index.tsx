@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import AuthApi from '../../../services/AuthApi';
+import { Toast, ToastContainer } from 'react-bootstrap';
 
 import {
   StateContextType,
@@ -15,6 +16,9 @@ const LogInForm = () => {
   const emailInputRef = useRef<any>(null);
   const passwordInputRef = useRef<any>(null);
 
+  const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | undefined>();
+
   async function submitHandler(event: any) {
     event.preventDefault();
 
@@ -22,18 +26,23 @@ const LogInForm = () => {
     const enteredPassword = passwordInputRef?.current?.value;
 
     // TODO: Add validation
-    const response = await AuthApi.login({
-      username: enteredEmail,
-      password: enteredPassword,
-    });
+    try {
+      const response = await AuthApi.login({
+        username: enteredEmail,
+        password: enteredPassword,
+      });
 
-    localStorage.setItem('accessToken', response.data.data.access_token);
-    const { userId, email } = response.data.data.user;
-    setUser({
-      userId,
-      email,
-      accessToken: response.data.data.access_token,
-    });
+      localStorage.setItem('accessToken', response.data.data.access_token);
+      const { userId, email } = response.data.data.user;
+      setUser({
+        userId,
+        email,
+        accessToken: response.data.data.access_token,
+      });
+    } catch (error: any) {
+      setErrorMessage(error.response.data.error.messages);
+      setShowError(true);
+    }
   }
 
   // set current user then redirect to home page
@@ -81,6 +90,20 @@ const LogInForm = () => {
           </button>
         </div>
       </form>
+      <ToastContainer className="absolute right-2 " position="top-end">
+        <Toast
+          onClose={() => setShowError(false)}
+          show={showError}
+          delay={3000}
+          autohide
+          className="px-8 py-4 m-10 bg-red-300 flex flex-col items-start border-1 rounded"
+        >
+          <Toast.Header>
+            <strong className="me-auto">Zuong Dashboard</strong>
+          </Toast.Header>
+          <Toast.Body>{errorMessage}</Toast.Body>
+        </Toast>
+      </ToastContainer>
     </div>
   );
 };
