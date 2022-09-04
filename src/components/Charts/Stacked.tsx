@@ -12,11 +12,7 @@ import {
 } from '@syncfusion/ej2-react-charts';
 import { useTranslation } from 'react-i18next';
 
-import {
-  stackedCustomSeries,
-  stackedPrimaryXAxis,
-  stackedPrimaryYAxis,
-} from '../../data/dummy';
+import { stackedPrimaryXAxis, stackedPrimaryYAxis } from '../../data/dummy';
 
 interface StackedProps {
   width?: string;

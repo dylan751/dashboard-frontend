@@ -1,9 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { BsBoxSeam, BsCurrencyDollar } from 'react-icons/bs';
+import { BsBoxSeam } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
-import { Stacked, Pie, Button, SparkLine } from '../components';
-import { SparklineAreaData, ecomPieChartData } from '../data/dummy';
+import { Stacked, Button, SparkLine } from '../components';
+import { SparklineAreaData } from '../data/dummy';
 import { StateContextType, useStateContext } from '../contexts/ContextProvider';
 import { useTranslation } from 'react-i18next';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
