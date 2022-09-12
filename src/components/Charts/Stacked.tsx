@@ -19,6 +19,7 @@ interface StackedProps {
   height?: string;
 }
 
+
 const Stacked = ({ width, height }: StackedProps) => {
   const { t } = useTranslation();
 
